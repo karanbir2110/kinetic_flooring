@@ -1,8 +1,8 @@
 {
-  "name": "stride-kinetic-flooring",
+  "name": "Spandan-kinetic-flooring",
   "version": "1.0.0",
   "private": true,
-  "description": "STRIDE — modular kinetic flooring platform. Marketing / pitch site.",
+  "description": "Spandan — modular kinetic flooring platform. Marketing / pitch site.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

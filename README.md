@@ -1,6 +1,6 @@
 # Kinetic Flooring
 
-Marketing / pitch website for **STRIDE**, a modular kinetic-flooring platform that
+Marketing / pitch website for **Spandan**, a modular kinetic-flooring platform that
 converts foot traffic into usable electrical energy while adding a distributed
 sensing and energy-monitoring layer to high-traffic spaces.
 
