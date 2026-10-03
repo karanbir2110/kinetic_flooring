@@ -39,7 +39,7 @@ function HexOverlay() {
     <svg
       className="pointer-events-none absolute inset-x-0 bottom-0 h-[46%] w-full opacity-70"
       viewBox="0 0 960 420"
-      preserveAspectRatio="xMidYMax slice"
+      preserveAspectRatio="xMidYMid slice"
       aria-hidden
     >
       <defs>

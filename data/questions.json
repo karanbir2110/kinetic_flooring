@@ -1,0 +1,54 @@
+[
+  {
+    "id": "q_name",
+    "label": "Full name",
+    "type": "text",
+    "placeholder": "Jordan Rao",
+    "required": true,
+    "active": true,
+    "order": 1
+  },
+  {
+    "id": "q_email",
+    "label": "Work email",
+    "type": "email",
+    "placeholder": "you@company.com",
+    "required": true,
+    "active": true,
+    "order": 2
+  },
+  {
+    "id": "q_org",
+    "label": "Organization",
+    "type": "text",
+    "placeholder": "Company or institution",
+    "required": true,
+    "active": true,
+    "order": 3
+  },
+  {
+    "id": "q_type",
+    "label": "How would you like to partner?",
+    "type": "select",
+    "options": [
+      "Pilot a deployment",
+      "Infrastructure / building integration",
+      "Sustainability collaboration",
+      "Technology partnership",
+      "Investment",
+      "Other"
+    ],
+    "required": true,
+    "active": true,
+    "order": 4
+  },
+  {
+    "id": "q_message",
+    "label": "Tell us about your site or use case",
+    "type": "textarea",
+    "placeholder": "Where would this be deployed, and what are you hoping to learn or achieve?",
+    "required": false,
+    "active": true,
+    "order": 5
+  }
+]
