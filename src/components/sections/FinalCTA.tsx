@@ -1,6 +1,7 @@
 import Reveal from "@/components/ui/Reveal";
 import { hexPoints } from "@/components/ui/Hex";
 import { finalCta } from "@/lib/content";
+import PartnerForm from "./PartnerForm";
 
 export default function FinalCTA() {
   return (
@@ -37,21 +38,14 @@ export default function FinalCTA() {
           <p className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-paper-dim sm:text-lg">
             {finalCta.body}
           </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a
-              href={finalCta.ctaPrimary.href}
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-electric px-8 py-4 text-sm font-semibold text-white shadow-glow transition-transform hover:-translate-y-0.5"
-            >
-              {finalCta.ctaPrimary.label}
-              <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
-            </a>
-            <a
-              href={finalCta.ctaSecondary.href}
-              className="inline-flex items-center justify-center rounded-full border border-hairline bg-white/[0.03] px-8 py-4 text-sm font-semibold text-paper transition-colors hover:border-paper/40"
-            >
+          <PartnerForm />
+
+          <p className="mt-6 text-sm text-muted">
+            Prefer email?{" "}
+            <a href={finalCta.ctaSecondary.href} className="text-paper-dim underline underline-offset-4 hover:text-paper">
               {finalCta.ctaSecondary.label}
             </a>
-          </div>
+          </p>
         </Reveal>
       </div>
     </section>
