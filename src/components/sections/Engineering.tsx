@@ -28,7 +28,7 @@ export default function Engineering() {
                     <polygon
                       points="6,0.5 11,3.25 11,8.75 6,11.5 1,8.75 1,3.25"
                       fill="none"
-                      stroke="#2F7BFF"
+                      stroke="#E2672A"
                       strokeWidth="1"
                     />
                   </svg>

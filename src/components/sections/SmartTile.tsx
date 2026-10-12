@@ -7,9 +7,9 @@ function ConcentricTile() {
   const cx = 130;
   const cy = 130;
   const rings = [
-    { r: 118, color: "rgba(255,255,255,0.28)", label: smartTile.layers[0].key },
-    { r: 82, color: "#2F7BFF", label: smartTile.layers[1].key },
-    { r: 46, color: "#25E0A0", label: smartTile.layers[2].key },
+    { r: 118, color: "rgba(247,236,216,0.28)", label: smartTile.layers[0].key },
+    { r: 82, color: "#E2672A", label: smartTile.layers[1].key },
+    { r: 46, color: "#E0B04A", label: smartTile.layers[2].key },
   ];
   return (
     <svg viewBox="0 0 260 260" className="mx-auto w-full max-w-sm" role="img" aria-label="Concentric hexagonal tile with mechanical, electrical and data layers">
@@ -19,7 +19,7 @@ function ConcentricTile() {
           <polygon points={hexPoints(cx, cy, ring.r)} fill={ring.color} opacity={i === 2 ? 0.14 : 0.05} />
         </g>
       ))}
-      <circle cx={cx} cy={cy} r="4" fill="#25E0A0" className="pulse-dot" />
+      <circle cx={cx} cy={cy} r="4" fill="#E0B04A" className="pulse-dot" />
     </svg>
   );
 }
@@ -37,7 +37,7 @@ export default function SmartTile() {
               <li key={l.key} className="flex items-center gap-3 text-sm">
                 <span
                   className="h-2.5 w-2.5 flex-none rounded-sm"
-                  style={{ background: i === 0 ? "rgba(255,255,255,0.4)" : i === 1 ? "#2F7BFF" : "#25E0A0" }}
+                  style={{ background: i === 0 ? "rgba(247,236,216,0.4)" : i === 1 ? "#E2672A" : "#E0B04A" }}
                   aria-hidden
                 />
                 <span className="font-medium text-paper">{l.key}</span>

@@ -44,12 +44,12 @@ function HexOverlay() {
     >
       <defs>
         <linearGradient id="heroFade" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#2F7BFF" stopOpacity="0" />
-          <stop offset="100%" stopColor="#2F7BFF" stopOpacity="0.25" />
+          <stop offset="0%" stopColor="#E2672A" stopOpacity="0" />
+          <stop offset="100%" stopColor="#E2672A" stopOpacity="0.25" />
         </linearGradient>
       </defs>
       {cells.map((c, i) => {
-        const color = c.lit === "energy" ? "#25E0A0" : c.lit === "electric" ? "#2F7BFF" : "rgba(255,255,255,0.28)";
+        const color = c.lit === "energy" ? "#E0B04A" : c.lit === "electric" ? "#E2672A" : "rgba(247,236,216,0.28)";
         return (
           <g key={i}>
             <polygon points={hexPoints(c.x, c.y, 46)} fill="none" stroke={color} strokeWidth={c.lit ? 1.4 : 0.8} opacity={c.lit ? 0.9 : 0.4} />
@@ -63,7 +63,7 @@ function HexOverlay() {
       <polyline
         points="120,250 300,300 480,250 570,355 750,355 840,250"
         fill="none"
-        stroke="#5AA0FF"
+        stroke="#F2994A"
         strokeWidth="1.4"
         strokeLinejoin="round"
         className="flow-path"
@@ -115,7 +115,7 @@ export default function Hero() {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a
                 href={hero.ctaPrimary.href}
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-electric px-7 py-3.5 text-sm font-semibold text-white shadow-glow transition-transform hover:-translate-y-0.5"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-electric px-7 py-3.5 text-sm font-semibold text-ink shadow-glow transition-transform hover:-translate-y-0.5"
               >
                 {hero.ctaPrimary.label}
                 <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>

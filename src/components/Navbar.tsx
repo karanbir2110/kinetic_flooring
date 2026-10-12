@@ -8,8 +8,8 @@ function Logo() {
   return (
     <a href="#top" className="group flex items-center gap-2.5" aria-label={`${brand.name} home`}>
       <svg viewBox="0 0 32 32" className="h-7 w-7" aria-hidden>
-        <polygon points={hexPoints(16, 16, 14)} fill="none" stroke="#2F7BFF" strokeWidth="1.5" />
-        <polygon points={hexPoints(16, 16, 7)} fill="#2F7BFF" className="opacity-80 transition-opacity group-hover:opacity-100" />
+        <polygon points={hexPoints(16, 16, 14)} fill="none" stroke="#E2672A" strokeWidth="1.5" />
+        <polygon points={hexPoints(16, 16, 7)} fill="#E2672A" className="opacity-80 transition-opacity group-hover:opacity-100" />
       </svg>
       <span className="font-display text-lg font-semibold tracking-tight text-paper">
         {brand.name}

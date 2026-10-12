@@ -21,7 +21,7 @@ export function HexMarker({
   className?: string;
 }) {
   const stroke =
-    tone === "energy" ? "#25E0A0" : tone === "muted" ? "rgba(255,255,255,0.35)" : "#2F7BFF";
+    tone === "energy" ? "#E0B04A" : tone === "muted" ? "rgba(247,236,216,0.35)" : "#E2672A";
   return (
     <span className={`relative inline-flex items-center justify-center ${className}`}>
       <svg viewBox="0 0 44 44" className="h-11 w-11" aria-hidden>

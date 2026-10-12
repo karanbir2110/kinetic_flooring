@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --font-display: "Space Grotesk";
-  --font-body: "IBM Plex Sans";
+  --font-display: "Cormorant Garamond";
+  --font-body: "Mukta";
+  --font-deva: "Tiro Devanagari Sanskrit";
+  --font-cinzel: "Cinzel";
   --font-mono: "IBM Plex Mono";
   --shell-pad: clamp(1.25rem, 5vw, 4rem);
 }
@@ -17,31 +19,35 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 88px;
-  background-color: #080a0f;
+  background-color: #140A08;
 }
 
 body {
-  background-color: #080a0f;
-  color: #f4f6fa;
+  background-color: #140A08;
+  color: #F7ECD8;
   font-family: var(--font-body), system-ui, sans-serif;
   overflow-x: hidden;
 }
 
 ::selection {
-  background: rgba(47, 123, 255, 0.35);
+  background: rgba(226,103,42, 0.35);
   color: #ffffff;
 }
 
 /* ---- Typographic helpers ---- */
 .font-display {
-  font-family: var(--font-display), system-ui, sans-serif;
+  font-family: var(--font-display), Georgia, serif;
+  font-size-adjust: 0.52;
 }
 .eyebrow {
-  font-family: var(--font-mono), monospace;
+  font-family: var(--font-cinzel), serif;
   font-size: 0.72rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #7c8698;
+  color: #A8957F;
+}
+.font-deva {
+  font-family: var(--font-deva), serif;
 }
 .mono {
   font-family: var(--font-mono), monospace;
@@ -57,12 +63,12 @@ body {
 
 /* ---- Hairline + grid textures ---- */
 .hairline-t {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(247,236,216, 0.08);
 }
 .grid-texture {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+    linear-gradient(rgba(247,236,216, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(247,236,216, 0.028) 1px, transparent 1px);
   background-size: 64px 64px;
 }
 
@@ -137,7 +143,7 @@ body {
 
 /* ---- Focus visibility ---- */
 :focus-visible {
-  outline: 2px solid #5aa0ff;
+  outline: 2px solid #F2994A;
   outline-offset: 3px;
   border-radius: 4px;
 }

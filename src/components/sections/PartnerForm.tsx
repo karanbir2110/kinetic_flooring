@@ -115,7 +115,7 @@ export default function PartnerForm() {
         <button
           type="submit"
           disabled={submitting}
-          className="group mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-electric px-8 py-4 text-sm font-semibold text-white shadow-glow transition-transform hover:-translate-y-0.5 disabled:opacity-60 sm:w-auto"
+          className="group mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-electric px-8 py-4 text-sm font-semibold text-ink shadow-glow transition-transform hover:-translate-y-0.5 disabled:opacity-60 sm:w-auto"
         >
           {submitting ? "Sending…" : "Send"}
           <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>

@@ -10,8 +10,8 @@ export default function FinalCTA() {
       <svg className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.35]" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" aria-hidden>
         <defs>
           <radialGradient id="ctaGlow" cx="50%" cy="40%" r="60%">
-            <stop offset="0%" stopColor="#2F7BFF" stopOpacity="0.35" />
-            <stop offset="100%" stopColor="#2F7BFF" stopOpacity="0" />
+            <stop offset="0%" stopColor="#E2672A" stopOpacity="0.35" />
+            <stop offset="100%" stopColor="#E2672A" stopOpacity="0" />
           </radialGradient>
         </defs>
         <rect width="1200" height="500" fill="url(#ctaGlow)" />
@@ -20,7 +20,7 @@ export default function FinalCTA() {
             key={i}
             points={hexPoints(x, y, 40)}
             fill="none"
-            stroke={i % 2 ? "#25E0A0" : "#2F7BFF"}
+            stroke={i % 2 ? "#E0B04A" : "#E2672A"}
             strokeWidth="1"
             opacity="0.4"
             className="tile-lit"

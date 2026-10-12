@@ -6,43 +6,44 @@ const config: Config = {
     extend: {
       colors: {
         ink: {
-          DEFAULT: "#080A0F",
-          900: "#0A0D13",
-          800: "#0E121A",
-          700: "#141924",
-          600: "#1B2230",
+          DEFAULT: "#140A08",
+          900: "#1A0D0A",
+          800: "#22110D",
+          700: "#2C1712",
+          600: "#3A1F18",
         },
         paper: {
-          DEFAULT: "#F4F6FA",
-          dim: "#C8D0DE",
+          DEFAULT: "#F7ECD8",
+          dim: "#D9C6A5",
         },
         electric: {
-          DEFAULT: "#2F7BFF",
-          bright: "#5AA0FF",
-          deep: "#1750C7",
+          DEFAULT: "#E2672A",
+          bright: "#F2994A",
+          deep: "#B34A17",
         },
         energy: {
-          DEFAULT: "#25E0A0",
-          dim: "#0F8F66",
+          DEFAULT: "#E0B04A",
+          dim: "#9C7420",
         },
-        muted: "#7C8698",
-        hairline: "rgba(255,255,255,0.09)",
+        muted: "#A8957F",
+        hairline: "rgba(247,236,216,0.09)",
       },
       fontFamily: {
-        display: ["var(--font-display)", "Space Grotesk", "ui-sans-serif", "system-ui", "sans-serif"],
-        sans: ["var(--font-body)", "IBM Plex Sans", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "Cormorant Garamond", "Tiro Devanagari Sanskrit", "Georgia", "ui-sans-serif", "system-ui", "sans-serif"],
+        sans: ["var(--font-body)", "Mukta", "ui-sans-serif", "system-ui", "sans-serif"],
+        deva: ["var(--font-deva)", "Tiro Devanagari Sanskrit", "serif"],
         mono: ["var(--font-mono)", "IBM Plex Mono", "ui-monospace", "SFMono-Regular", "monospace"],
       },
       letterSpacing: {
-        tightest: "-0.045em",
+        tightest: "-0.015em",
         eyebrow: "0.22em",
       },
       maxWidth: {
         shell: "1240px",
       },
       boxShadow: {
-        glow: "0 0 0 1px rgba(47,123,255,0.35), 0 0 40px -8px rgba(47,123,255,0.45)",
-        "glow-energy": "0 0 0 1px rgba(37,224,160,0.35), 0 0 34px -10px rgba(37,224,160,0.5)",
+        glow: "0 0 0 1px rgba(226,103,42,0.35), 0 0 40px -8px rgba(226,103,42,0.45)",
+        "glow-energy": "0 0 0 1px rgba(224,176,74,0.35), 0 0 34px -10px rgba(224,176,74,0.5)",
       },
       keyframes: {
         pulseFlow: {

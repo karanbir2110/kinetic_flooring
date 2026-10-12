@@ -4,8 +4,8 @@ import { solution } from "@/lib/content";
 
 /* compact glyphs that echo each stage of the chain */
 function Glyph({ i }: { i: number }) {
-  const c = "#5AA0FF";
-  const g = "#25E0A0";
+  const c = "#F2994A";
+  const g = "#E0B04A";
   switch (i) {
     case 0: // footstep
       return (
