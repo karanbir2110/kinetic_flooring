@@ -6,16 +6,23 @@ export function Section({
   children,
   className = "",
   hairline = true,
+  width = "default",
 }: {
   id?: string;
   children: ReactNode;
   className?: string;
   /** show the top hairline divider (hidden for sections after a full-bleed block) */
   hairline?: boolean;
+  /** "default" = 1240px, "wide" = 1560px, "full" = edge to edge (keeps side padding) */
+  width?: "default" | "wide" | "full";
 }) {
   return (
     <section id={id} className={`relative py-24 sm:py-28 lg:py-36 ${className}`}>
-      <div className="shell">
+      <div
+        className={`shell ${
+          width === "wide" ? "shell-wide" : width === "full" ? "shell-full" : ""
+        }`}
+      >
         {hairline && <div className="hairline-t mb-16" aria-hidden />}
         {children}
       </div>

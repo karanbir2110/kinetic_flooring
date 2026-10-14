@@ -79,7 +79,7 @@ export default function Hero() {
       {/* Photographic backdrop */}
       <div className="absolute inset-0">
         <Image
-          src="/assets/hero-floor.jpg"
+          src="/assets/hero-floor.jpgg"
           alt="Commuters walking across an illuminated hexagonal kinetic floor in a high-traffic concourse"
           fill
           priority

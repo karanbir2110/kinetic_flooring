@@ -17,19 +17,22 @@
      muted         quiet captions
    ===================================================================== */
 
-/* ---- Scheme 1 : Old Rose / Sea Shell / Sky Blue (light) ---- */
+/* ---- Scheme 1 : Old Rose / Sea Shell / Sky Blue (light) ----
+   Rose  = buttons, hexagons, accent headline text
+   Blue  = card + footer surfaces, hover states, big step numbers, diagram details
+   Sea Shell = page background                                              */
 :root,
 :root[data-theme="1"] {
   color-scheme: light;
-  --c-ink: 250 240 234;          /* Sea Shell  #FAF0EA */
-  --c-ink-900: 243 228 219;      /* #F3E4DB */
-  --c-ink-800: 237 217 206;      /* #EDD9CE */
-  --c-ink-700: 230 206 193;      /* #E6CEC1 */
-  --c-ink-600: 227 180 188;      /* #E3B4BC (rose tint) */
+  --c-ink: 250 240 234;          /* Sea Shell  #FAF0EA (page background) */
+  --c-ink-900: 226 238 246;      /* #E2EEF6  pale sky blue — cards, footer */
+  --c-ink-800: 213 229 241;      /* #D5E5F1  card hover */
+  --c-ink-700: 198 218 234;      /* #C6DAEA */
+  --c-ink-600: 160 195 220;      /* #A0C3DC  big faint step numbers */
   --c-paper: 58 35 41;           /* deep rose-brown #3A2329 */
   --c-paper-dim: 107 74 83;      /* #6B4A53 */
   --c-electric: 225 154 166;     /* Old Rose   #E19AA6 */
-  --c-electric-bright: 176 74 96;/* readable rose #B04A60 */
+  --c-electric-bright: 176 74 96;/* readable rose #B04A60 (accent text) */
   --c-electric-deep: 140 52 72;  /* #8C3448 */
   --c-energy: 130 176 206;       /* Sky Blue   #82B0CE */
   --c-energy-dim: 52 112 150;    /* readable blue #347096 */
@@ -58,24 +61,24 @@
   --theme-color: #F5EEDD;
 }
 
-/* ---- Scheme 3 : Cream #FFECD1 on Burgundy #3E000C (dark) ---- */
+/* ---- Scheme 3 : Burgundy #3E000C on Cream #FFECD1 (light) ---- */
 :root[data-theme="3"] {
-  color-scheme: dark;
-  --c-ink: 62 0 12;              /* #3E000C */
-  --c-ink-900: 52 0 9;           /* #340009 */
-  --c-ink-800: 43 0 7;           /* #2B0007 */
-  --c-ink-700: 77 15 28;         /* #4D0F1C */
-  --c-ink-600: 106 36 52;        /* #6A2434 */
-  --c-paper: 255 236 209;        /* #FFECD1 */
-  --c-paper-dim: 227 203 176;    /* #E3CBB0 */
-  --c-electric: 255 236 209;     /* #FFECD1 */
-  --c-electric-bright: 255 246 230;/* #FFF6E6 */
-  --c-electric-deep: 217 190 155;/* #D9BE9B */
-  --c-energy: 188 153 140;       /* cream/burgundy blend #BC998C */
-  --c-energy-dim: 224 191 169;   /* #E0BFA9 */
-  --c-onaccent: 62 0 12;         /* burgundy on cream */
-  --c-muted: 197 165 150;        /* #C5A596 */
-  --theme-color: #3E000C;
+  color-scheme: light;
+  --c-ink: 255 236 209;          /* Cream #FFECD1 (page background) */
+  --c-ink-900: 245 222 190;      /* #F5DEBE */
+  --c-ink-800: 236 209 172;      /* #ECD1AC */
+  --c-ink-700: 226 195 155;      /* #E2C39B */
+  --c-ink-600: 222 180 150;      /* #DEB496 (faint numbers) */
+  --c-paper: 62 0 12;            /* Burgundy #3E000C (text) */
+  --c-paper-dim: 99 48 55;       /* #633037 */
+  --c-electric: 62 0 12;         /* Burgundy #3E000C (buttons, shapes) */
+  --c-electric-bright: 92 14 32; /* #5C0E20 (accent text) */
+  --c-electric-deep: 43 0 8;     /* #2B0008 */
+  --c-energy: 158 118 110;       /* cream/burgundy blend #9E766E */
+  --c-energy-dim: 110 59 61;     /* #6E3B3D (readable accent text) */
+  --c-onaccent: 255 236 209;     /* cream on burgundy buttons */
+  --c-muted: 122 74 76;          /* #7A4A4C */
+  --theme-color: #FFECD1;
 }
 
 :root {
@@ -136,6 +139,14 @@ body {
   max-width: 1240px;
   margin-inline: auto;
   padding-inline: var(--shell-pad);
+}
+
+/* Optional wider variants — used via <Section width="wide" | "full"> */
+.shell-wide {
+  max-width: 1560px;
+}
+.shell-full {
+  max-width: none;
 }
 
 /* ---- Hairline + grid textures ---- */

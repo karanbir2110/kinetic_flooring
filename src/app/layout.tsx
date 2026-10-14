@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "Spandan",
     images: [
       {
-        url: "/assets/hero-floor.jpg",
+        url: "/assets/hero-floor.jpgg",
         width: 1024,
         height: 886,
         alt: "Kinetic hexagonal flooring in a high-traffic concourse",
