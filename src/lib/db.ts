@@ -77,14 +77,13 @@ export async function getResponses(): Promise<PartnerResponse[]> {
   return (data ?? []).map(rowToResponse);
 }
 
-export async function addResponse(answers: Answer[]): Promise<PartnerResponse> {
-  const { data, error } = await supabaseServer
-    .from("responses")
-    .insert({ answers })
-    .select()
-    .single();
+export async function addResponse(answers: Answer[]): Promise<void> {
+  // NOTE: no .select() here on purpose. The public site uses the anon key, and
+  // RLS only allows anon to INSERT into "responses" (not read them back).
+  // Chaining .select() asks Supabase to return the inserted row, which needs
+  // a SELECT policy and fails with an RLS error ("Something went wrong").
+  const { error } = await supabaseServer.from("responses").insert({ answers });
   if (error) throw error;
-  return rowToResponse(data);
 }
 
 export async function deleteResponse(id: string): Promise<boolean> {
