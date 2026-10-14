@@ -68,7 +68,7 @@ export default function Landing() {
           <span className="inline-block h-px w-8 bg-electric" aria-hidden />
         </div>
 
-        <p className="landing-fade font-deva mt-6 text-3xl text-energy-dim" style={{ animationDelay: "0.2s" }} lang="sa">स्पन्दन</p>
+        <p className="landing-fade font-deva mt-6 text-3xl text-energy-dim" style={{ animationDelay: "0.2s" }} lang="sa">कर्म</p>
 
         <h1
           className="landing-fade font-display mt-3 text-balance text-[2.6rem] font-bold leading-[1.05] tracking-tightest sm:text-6xl lg:text-[4.2rem]"

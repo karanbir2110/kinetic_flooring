@@ -5,7 +5,7 @@
  */
 
 export const brand = {
-  name: "Spandan",
+  name: "KARM",
   tagline: "Kinetic Energy Systems",
   microStatement:
     "Kinetic Energy Harvesting • Smart Flooring • Modular Infrastructure",
@@ -14,7 +14,7 @@ export const brand = {
 
 /* ---- Landing (entry) page — shown at "/" before the full site at "/home" ---- */
 export const landing = {
-  eyebrow: "Spandan — Kinetic Energy Systems",
+  eyebrow: "KARM — Kinetic Energy Systems",
   title: ["Take a step", "towards sustainable energy."],
   sub: "Every footstep carries a small amount of untapped power. Spandan turns ordinary floors into a quiet, continuous source of renewable energy.",
   cta: { label: "Enter Spandan", href: "/home" },
@@ -30,34 +30,42 @@ export const nav = [
 
 /* ---- Section 1: Hero ---- */
 export const hero = {
-  eyebrow: "Kinetic energy harvesting platform",
-  title: ["Turn every step", "into energy."],
-  sub: "Kinetic flooring that converts everyday foot traffic into usable electrical energy — while turning the floor into an intelligent infrastructure layer.",
+  eyebrow: "Karm Energy Returns",
+  title: ["Every step you take", "returns something."],
+  sub: "KARM turns everyday footsteps into power, and power into attention. Our kinetic tiles turn foot traffic into electricity and power a built-in LED display, so your message is carried by the very people it reachesKARM turns campaigns, events, CSR commitments and games into experiences people step into, not just walk past it..",
   flow: ["Step", "Harvest", "Convert", "Store"],
   ctaPrimary: { label: "Explore the technology", href: "#solution" },
   ctaSecondary: { label: "Partner with us", href: "#contact" },
 };
 
-/* ---- Section 2: Problem ---- */
+/* ---- Section 2: What KARM Offers (key kept as `problem` so Problem.tsx keeps working) ---- */
 export const problem = {
-  eyebrow: "The opportunity",
-  title: "Every day, millions of footsteps pass through our buildings.",
-  lead: "High-footfall spaces hold a constant, renewable source of mechanical energy. Conventional floors simply absorb it and let it dissipate as heat and sound.",
+  eyebrow: "What KARM Offers",
+  title: "Four ways to turn footsteps into impact.",
   cards: [
     {
       id: "01",
-      title: "Untapped energy",
-      body: "Human movement happens continuously across concourses, corridors and platforms — and none of it is recovered.",
+      title: "Brand Campaigns",
+      tagline: "Advertising that runs on footfall.",
+      body: "Your message, lit up wherever people walk. Choose your spot, choose your time, and pay only for that.",
     },
     {
       id: "02",
-      title: "Passive infrastructure",
-      body: "Traditional flooring provides a surface, but no intelligence and no energy layer beneath the people using it.",
+      title: "CSR & ESG Programs",
+      tagline: "Sustainability that people can see.",
+      body: "Own the tiles or subscribe to them. We handle the deployment, your story goes on the display, and people see your sustainability commitment in action every day.",
     },
     {
       id: "03",
-      title: "Smarter spaces",
-      body: "Buildings increasingly need distributed sensing, measurable efficiency and credible, visible sustainability.",
+      title: "Public Events",
+      tagline: "Events powered by the crowd.",
+      body: "At concerts and festivals, the audience becomes the power source. The bigger the crowd, the bigger the impact.",
+    },
+    {
+      id: "04",
+      title: "Gaming & Interactive Experiences",
+      tagline: "Games you play with your feet.",
+      body: "Games that run entirely on footsteps. Step on the tile, and the play begins.",
     },
   ],
 };
