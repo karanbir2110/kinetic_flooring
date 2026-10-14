@@ -10,8 +10,8 @@ export default function Footer() {
           <div className="max-w-sm">
             <div className="flex items-center gap-2.5">
               <svg viewBox="0 0 32 32" className="h-6 w-6" aria-hidden>
-                <polygon points={hexPoints(16, 16, 14)} fill="none" stroke="#E2672A" strokeWidth="1.5" />
-                <polygon points={hexPoints(16, 16, 7)} fill="#E2672A" opacity="0.8" />
+                <polygon points={hexPoints(16, 16, 14)} fill="none" stroke="rgb(var(--c-electric))" strokeWidth="1.5" />
+                <polygon points={hexPoints(16, 16, 7)} fill="rgb(var(--c-electric))" opacity="0.8" />
               </svg>
               <span className="font-display text-lg font-semibold tracking-tight">{brand.name}</span>
             </div>

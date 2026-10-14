@@ -42,7 +42,7 @@ export default function BusinessValue() {
             <span
               aria-hidden
               className="h-8 w-8 rounded-md border border-hairline transition-colors group-hover:border-electric/60"
-              style={{ background: "linear-gradient(135deg, rgba(226,103,42,0.14), transparent)" }}
+              style={{ background: "linear-gradient(135deg, rgb(var(--c-electric) / 0.14), transparent)" }}
             />
             <h3 className="font-display text-lg font-semibold leading-tight tracking-tight">{card.key}</h3>
             <p className="text-sm leading-relaxed text-paper-dim">{card.body}</p>

@@ -19,13 +19,13 @@ export default function Applications() {
               <polygon
                 points={hexPoints(20, 20, 17)}
                 fill="none"
-                stroke="rgba(247,236,216,0.25)"
+                stroke="rgb(var(--c-paper) / 0.25)"
                 strokeWidth="1"
-                className="transition-all duration-300 group-hover:stroke-[#E2672A]"
+                className="transition-all duration-300 group-hover:stroke-electric"
               />
               <polygon
                 points={hexPoints(20, 20, 9)}
-                fill="#E2672A"
+                fill="rgb(var(--c-electric))"
                 opacity="0"
                 className="transition-opacity duration-300 group-hover:opacity-70"
               />

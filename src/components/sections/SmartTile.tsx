@@ -7,9 +7,9 @@ function ConcentricTile() {
   const cx = 130;
   const cy = 130;
   const rings = [
-    { r: 118, color: "rgba(247,236,216,0.28)", label: smartTile.layers[0].key },
-    { r: 82, color: "#E2672A", label: smartTile.layers[1].key },
-    { r: 46, color: "#E0B04A", label: smartTile.layers[2].key },
+    { r: 118, color: "rgb(var(--c-paper) / 0.28)", label: smartTile.layers[0].key },
+    { r: 82, color: "rgb(var(--c-electric))", label: smartTile.layers[1].key },
+    { r: 46, color: "rgb(var(--c-energy))", label: smartTile.layers[2].key },
   ];
   return (
     <svg viewBox="0 0 260 260" className="mx-auto w-full max-w-sm" role="img" aria-label="Concentric hexagonal tile with mechanical, electrical and data layers">
@@ -19,7 +19,7 @@ function ConcentricTile() {
           <polygon points={hexPoints(cx, cy, ring.r)} fill={ring.color} opacity={i === 2 ? 0.14 : 0.05} />
         </g>
       ))}
-      <circle cx={cx} cy={cy} r="4" fill="#E0B04A" className="pulse-dot" />
+      <circle cx={cx} cy={cy} r="4" fill="rgb(var(--c-energy))" className="pulse-dot" />
     </svg>
   );
 }
@@ -37,7 +37,7 @@ export default function SmartTile() {
               <li key={l.key} className="flex items-center gap-3 text-sm">
                 <span
                   className="h-2.5 w-2.5 flex-none rounded-sm"
-                  style={{ background: i === 0 ? "rgba(247,236,216,0.4)" : i === 1 ? "#E2672A" : "#E0B04A" }}
+                  style={{ background: i === 0 ? "rgb(var(--c-paper) / 0.4)" : i === 1 ? "rgb(var(--c-electric))" : "rgb(var(--c-energy))" }}
                   aria-hidden
                 />
                 <span className="font-medium text-paper">{l.key}</span>
@@ -71,7 +71,7 @@ export default function SmartTile() {
         {smartTile.chain.map((node, i) => (
           <span key={node} className="flex items-center gap-2">
             <span className="mono text-xs uppercase tracking-[0.14em] text-paper">{node}</span>
-            {i < smartTile.chain.length - 1 && <span className="text-electric" aria-hidden>→</span>}
+            {i < smartTile.chain.length - 1 && <span className="text-electric-bright" aria-hidden>→</span>}
           </span>
         ))}
       </Reveal>

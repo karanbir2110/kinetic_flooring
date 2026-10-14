@@ -5,28 +5,31 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // All colors are driven by CSS variables (see src/app/globals.css)
+        // so the three color schemes can be swapped at runtime.
         ink: {
-          DEFAULT: "#140A08",
-          900: "#1A0D0A",
-          800: "#22110D",
-          700: "#2C1712",
-          600: "#3A1F18",
+          DEFAULT: "rgb(var(--c-ink) / <alpha-value>)",
+          900: "rgb(var(--c-ink-900) / <alpha-value>)",
+          800: "rgb(var(--c-ink-800) / <alpha-value>)",
+          700: "rgb(var(--c-ink-700) / <alpha-value>)",
+          600: "rgb(var(--c-ink-600) / <alpha-value>)",
         },
         paper: {
-          DEFAULT: "#F7ECD8",
-          dim: "#D9C6A5",
+          DEFAULT: "rgb(var(--c-paper) / <alpha-value>)",
+          dim: "rgb(var(--c-paper-dim) / <alpha-value>)",
         },
         electric: {
-          DEFAULT: "#E2672A",
-          bright: "#F2994A",
-          deep: "#B34A17",
+          DEFAULT: "rgb(var(--c-electric) / <alpha-value>)",
+          bright: "rgb(var(--c-electric-bright) / <alpha-value>)",
+          deep: "rgb(var(--c-electric-deep) / <alpha-value>)",
         },
         energy: {
-          DEFAULT: "#E0B04A",
-          dim: "#9C7420",
+          DEFAULT: "rgb(var(--c-energy) / <alpha-value>)",
+          dim: "rgb(var(--c-energy-dim) / <alpha-value>)",
         },
-        muted: "#A8957F",
-        hairline: "rgba(247,236,216,0.09)",
+        onaccent: "rgb(var(--c-onaccent) / <alpha-value>)",
+        muted: "rgb(var(--c-muted) / <alpha-value>)",
+        hairline: "rgb(var(--c-paper) / 0.09)",
       },
       fontFamily: {
         display: ["var(--font-display)", "Cormorant Garamond", "Tiro Devanagari Sanskrit", "Georgia", "ui-sans-serif", "system-ui", "sans-serif"],
@@ -42,8 +45,8 @@ const config: Config = {
         shell: "1240px",
       },
       boxShadow: {
-        glow: "0 0 0 1px rgba(226,103,42,0.35), 0 0 40px -8px rgba(226,103,42,0.45)",
-        "glow-energy": "0 0 0 1px rgba(224,176,74,0.35), 0 0 34px -10px rgba(224,176,74,0.5)",
+        glow: "0 0 0 1px rgb(var(--c-electric) / 0.35), 0 0 40px -8px rgb(var(--c-electric) / 0.45)",
+        "glow-energy": "0 0 0 1px rgb(var(--c-energy) / 0.35), 0 0 34px -10px rgb(var(--c-energy) / 0.5)",
       },
       keyframes: {
         pulseFlow: {

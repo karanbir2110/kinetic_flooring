@@ -11,7 +11,7 @@ function FlowStrip() {
             <span className="text-electric-bright">{String(i + 1).padStart(2, "0")}</span> {step}
           </span>
           {i < hero.flow.length - 1 && (
-            <svg width="34" height="8" viewBox="0 0 34 8" aria-hidden className="text-electric">
+            <svg width="34" height="8" viewBox="0 0 34 8" aria-hidden className="text-electric-bright">
               <line x1="0" y1="4" x2="26" y2="4" stroke="currentColor" strokeWidth="1" className="flow-path" />
               <path d="M26 1 L33 4 L26 7" fill="none" stroke="currentColor" strokeWidth="1" />
             </svg>
@@ -44,12 +44,12 @@ function HexOverlay() {
     >
       <defs>
         <linearGradient id="heroFade" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#E2672A" stopOpacity="0" />
-          <stop offset="100%" stopColor="#E2672A" stopOpacity="0.25" />
+          <stop offset="0%" stopColor="rgb(var(--c-electric))" stopOpacity="0" />
+          <stop offset="100%" stopColor="rgb(var(--c-electric))" stopOpacity="0.25" />
         </linearGradient>
       </defs>
       {cells.map((c, i) => {
-        const color = c.lit === "energy" ? "#E0B04A" : c.lit === "electric" ? "#E2672A" : "rgba(247,236,216,0.28)";
+        const color = c.lit === "energy" ? "rgb(var(--c-energy))" : c.lit === "electric" ? "rgb(var(--c-electric))" : "rgb(var(--c-paper) / 0.28)";
         return (
           <g key={i}>
             <polygon points={hexPoints(c.x, c.y, 46)} fill="none" stroke={color} strokeWidth={c.lit ? 1.4 : 0.8} opacity={c.lit ? 0.9 : 0.4} />
@@ -63,7 +63,7 @@ function HexOverlay() {
       <polyline
         points="120,250 300,300 480,250 570,355 750,355 840,250"
         fill="none"
-        stroke="#F2994A"
+        stroke="rgb(var(--c-electric-bright))"
         strokeWidth="1.4"
         strokeLinejoin="round"
         className="flow-path"
@@ -115,14 +115,14 @@ export default function Hero() {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a
                 href={hero.ctaPrimary.href}
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-electric px-7 py-3.5 text-sm font-semibold text-ink shadow-glow transition-transform hover:-translate-y-0.5"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-electric px-7 py-3.5 text-sm font-semibold text-onaccent shadow-glow transition-transform hover:-translate-y-0.5"
               >
                 {hero.ctaPrimary.label}
                 <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
               </a>
               <a
                 href={hero.ctaSecondary.href}
-                className="inline-flex items-center justify-center rounded-full border border-hairline bg-white/[0.03] px-7 py-3.5 text-sm font-semibold text-paper transition-colors hover:border-paper/40"
+                className="inline-flex items-center justify-center rounded-full border border-hairline bg-paper/[0.05] px-7 py-3.5 text-sm font-semibold text-paper transition-colors hover:border-paper/40"
               >
                 {hero.ctaSecondary.label}
               </a>

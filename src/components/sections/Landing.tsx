@@ -25,7 +25,7 @@ function AmbientHexField() {
     >
       {cells.map((c, i) => {
         const color =
-          c.lit === "energy" ? "#E0B04A" : c.lit === "electric" ? "#E2672A" : "rgba(247,236,216,0.22)";
+          c.lit === "energy" ? "rgb(var(--c-energy))" : c.lit === "electric" ? "rgb(var(--c-electric))" : "rgb(var(--c-paper) / 0.22)";
         return (
           <g key={i}>
             <polygon
@@ -68,7 +68,7 @@ export default function Landing() {
           <span className="inline-block h-px w-8 bg-electric" aria-hidden />
         </div>
 
-        <p className="landing-fade font-deva mt-6 text-3xl text-energy" style={{ animationDelay: "0.2s" }} lang="sa">स्पन्दन</p>
+        <p className="landing-fade font-deva mt-6 text-3xl text-energy-dim" style={{ animationDelay: "0.2s" }} lang="sa">स्पन्दन</p>
 
         <h1
           className="landing-fade font-display mt-3 text-balance text-[2.6rem] font-bold leading-[1.05] tracking-tightest sm:text-6xl lg:text-[4.2rem]"
@@ -88,7 +88,7 @@ export default function Landing() {
         <div className="landing-fade mt-10" style={{ animationDelay: "0.55s" }}>
           <Link
             href={landing.cta.href}
-            className="group inline-flex items-center justify-center gap-2 rounded-full bg-electric px-8 py-4 text-sm font-semibold text-ink shadow-glow transition-transform hover:-translate-y-0.5"
+            className="group inline-flex items-center justify-center gap-2 rounded-full bg-electric px-8 py-4 text-sm font-semibold text-onaccent shadow-glow transition-transform hover:-translate-y-0.5"
           >
             {landing.cta.label}
             <span aria-hidden className="transition-transform group-hover:translate-x-1">

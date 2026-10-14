@@ -5,8 +5,8 @@ import CountUp from "@/components/ui/CountUp";
 import { prototype } from "@/lib/content";
 
 function Schematic() {
-  const S = "#F5C28A";
-  const L = "#F2994A";
+  const S = "rgb(var(--c-electric-bright) / 0.75)";
+  const L = "rgb(var(--c-electric-bright))";
   return (
     <svg viewBox="0 0 640 360" className="w-full" role="img" aria-label="Prototype power-conversion circuit: three-phase generator, bridge rectifier, filter, LTC3703-5 synchronous buck converter and 12 volt storage">
       <defs>
@@ -26,20 +26,20 @@ function Schematic() {
         <g key={i}>
           <circle cx="52" cy={y} r="20" fill="none" stroke={S} strokeWidth="1.2" />
           <path d={`M42 ${y} q5 -9 10 0 t10 0`} fill="none" stroke={L} strokeWidth="1.2" />
-          <text x="52" y={y + 34} textAnchor="middle" className="mono" fontSize="10" fill="#A8957F">
+          <text x="52" y={y + 34} textAnchor="middle" className="mono" fontSize="10" fill="rgb(var(--c-muted))">
             V{i + 1}
           </text>
           <line x1="72" y1={y} x2="130" y2={y} stroke={S} strokeWidth="1" opacity="0.5" />
         </g>
       ))}
-      <text x="52" y="80" textAnchor="middle" className="mono" fontSize="9" fill="#F2994A">3-PHASE</text>
+      <text x="52" y="80" textAnchor="middle" className="mono" fontSize="9" fill="rgb(var(--c-electric-bright))">3-PHASE</text>
 
       {/* rectifier block */}
-      <rect x="150" y="95" width="90" height="160" rx="4" fill="rgba(226,103,42,0.05)" stroke={S} strokeWidth="1" />
+      <rect x="150" y="95" width="90" height="160" rx="4" fill="rgb(var(--c-electric) / 0.05)" stroke={S} strokeWidth="1" />
       {[[195, 130], [220, 175], [170, 175], [195, 220]].map(([x, y], i) => (
         <polygon key={i} points={`${x - 8},${y - 6} ${x - 8},${y + 6} ${x + 6},${y}`} fill="none" stroke={L} strokeWidth="1.1" />
       ))}
-      <text x="195" y="272" textAnchor="middle" className="mono" fontSize="9" fill="#A8957F">D1–D6</text>
+      <text x="195" y="272" textAnchor="middle" className="mono" fontSize="9" fill="rgb(var(--c-muted))">D1–D6</text>
       <line x1="240" y1="130" x2="300" y2="130" stroke={S} strokeWidth="1" opacity="0.5" />
       <line x1="195" y1="95" x2="195" y2="70" stroke={S} strokeWidth="1" opacity="0.5" />
       <line x1="195" y1="255" x2="195" y2="300" stroke={S} strokeWidth="1" opacity="0.4" />
@@ -50,37 +50,37 @@ function Schematic() {
         <line x1="288" y1="122" x2="312" y2="122" stroke={L} strokeWidth="1.4" />
         <line x1="290" y1="130" x2="310" y2="130" stroke={L} strokeWidth="1.4" />
         <line x1="300" y1="130" x2="300" y2="300" stroke={S} strokeWidth="1" opacity="0.35" />
-        <text x="322" y="128" className="mono" fontSize="10" fill="#A8957F">C1 · 470µF</text>
+        <text x="322" y="128" className="mono" fontSize="10" fill="rgb(var(--c-muted))">C1 · 470µF</text>
       </g>
 
       {/* buck converter block */}
-      <rect x="360" y="95" width="150" height="130" rx="4" fill="rgba(224,176,74,0.05)" stroke={S} strokeWidth="1" />
-      <text x="435" y="114" textAnchor="middle" className="mono" fontSize="10" fill="#F2994A">LTC3703-5</text>
+      <rect x="360" y="95" width="150" height="130" rx="4" fill="rgb(var(--c-energy) / 0.05)" stroke={S} strokeWidth="1" />
+      <text x="435" y="114" textAnchor="middle" className="mono" fontSize="10" fill="rgb(var(--c-electric-bright))">LTC3703-5</text>
       {/* MOSFETs */}
       <rect x="378" y="130" width="22" height="22" rx="2" fill="none" stroke={L} strokeWidth="1" />
-      <text x="389" y="166" textAnchor="middle" className="mono" fontSize="8" fill="#A8957F">M1</text>
+      <text x="389" y="166" textAnchor="middle" className="mono" fontSize="8" fill="rgb(var(--c-muted))">M1</text>
       <rect x="378" y="175" width="22" height="22" rx="2" fill="none" stroke={L} strokeWidth="1" />
-      <text x="389" y="210" textAnchor="middle" className="mono" fontSize="8" fill="#A8957F">M2</text>
+      <text x="389" y="210" textAnchor="middle" className="mono" fontSize="8" fill="rgb(var(--c-muted))">M2</text>
       {/* inductor coil */}
-      <path d="M420 150 q6 -10 12 0 q6 -10 12 0 q6 -10 12 0" fill="none" stroke="#E0B04A" strokeWidth="1.4" />
-      <text x="450" y="140" textAnchor="middle" className="mono" fontSize="8" fill="#A8957F">L1 · 33µH</text>
+      <path d="M420 150 q6 -10 12 0 q6 -10 12 0 q6 -10 12 0" fill="none" stroke="rgb(var(--c-energy))" strokeWidth="1.4" />
+      <text x="450" y="140" textAnchor="middle" className="mono" fontSize="8" fill="rgb(var(--c-muted))">L1 · 33µH</text>
       <line x1="470" y1="150" x2="510" y2="150" stroke={S} strokeWidth="1" opacity="0.5" />
       <line x1="360" y1="150" x2="300" y2="150" stroke={S} strokeWidth="1" opacity="0" />
 
       {/* output to battery */}
       <line x1="510" y1="150" x2="560" y2="150" stroke={S} strokeWidth="1" opacity="0.5" />
       <line x1="560" y1="150" x2="560" y2="180" stroke={S} strokeWidth="1" opacity="0.5" />
-      <g stroke="#E0B04A" strokeWidth="1.6">
+      <g stroke="rgb(var(--c-energy))" strokeWidth="1.6">
         <line x1="548" y1="188" x2="572" y2="188" />
         <line x1="554" y1="196" x2="566" y2="196" />
         <line x1="548" y1="204" x2="572" y2="204" />
         <line x1="556" y1="212" x2="564" y2="212" />
       </g>
-      <text x="560" y="234" textAnchor="middle" className="mono" fontSize="10" fill="#E0B04A">12 V</text>
+      <text x="560" y="234" textAnchor="middle" className="mono" fontSize="10" fill="rgb(var(--c-energy))">12 V</text>
       <line x1="560" y1="212" x2="560" y2="300" stroke={S} strokeWidth="1" opacity="0.35" />
 
       {/* moving energy pulse */}
-      <circle r="3.5" fill="#F2994A" className="pulse-dot">
+      <circle r="3.5" fill="rgb(var(--c-electric-bright))" className="pulse-dot">
         <animateMotion dur="4s" repeatCount="indefinite" path="M120,70 L600,70 L600,150" />
       </circle>
     </svg>
@@ -108,7 +108,7 @@ export default function Prototype() {
               {prototype.chain.map((step, i) => (
                 <span key={step} className="flex items-center gap-2">
                   <span className="mono text-xs uppercase tracking-[0.1em] text-paper">{step}</span>
-                  {i < prototype.chain.length - 1 && <span className="text-electric" aria-hidden>→</span>}
+                  {i < prototype.chain.length - 1 && <span className="text-electric-bright" aria-hidden>→</span>}
                 </span>
               ))}
             </div>

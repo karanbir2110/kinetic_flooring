@@ -46,7 +46,7 @@ export default function PartnerForm() {
 
   if (submitted) {
     return (
-      <div className="mx-auto mt-10 max-w-xl rounded-2xl border border-hairline bg-white/[0.03] px-8 py-10 text-center">
+      <div className="mx-auto mt-10 max-w-xl rounded-2xl border border-hairline bg-paper/[0.05] px-8 py-10 text-center">
         <p className="font-display text-xl font-semibold">Thanks — we&apos;ve got it.</p>
         <p className="mt-2 text-sm text-paper-dim">
           Someone from the team will get back to you shortly.
@@ -75,7 +75,7 @@ export default function PartnerForm() {
                 value={values[q.id] ?? ""}
                 onChange={(e) => setValue(q.id, e.target.value)}
                 rows={4}
-                className="w-full rounded-xl border border-hairline bg-white/[0.03] px-4 py-3 text-sm text-paper outline-none transition-colors focus:border-electric/60"
+                className="w-full rounded-xl border border-hairline bg-paper/[0.05] px-4 py-3 text-sm text-paper outline-none transition-colors focus:border-electric/60"
               />
             ) : q.type === "select" ? (
               <select
@@ -83,7 +83,7 @@ export default function PartnerForm() {
                 required={q.required}
                 value={values[q.id] ?? ""}
                 onChange={(e) => setValue(q.id, e.target.value)}
-                className="w-full rounded-xl border border-hairline bg-white/[0.03] px-4 py-3 text-sm text-paper outline-none transition-colors focus:border-electric/60"
+                className="w-full rounded-xl border border-hairline bg-paper/[0.05] px-4 py-3 text-sm text-paper outline-none transition-colors focus:border-electric/60"
               >
                 <option value="" disabled>
                   Select an option
@@ -102,7 +102,7 @@ export default function PartnerForm() {
                 placeholder={q.placeholder}
                 value={values[q.id] ?? ""}
                 onChange={(e) => setValue(q.id, e.target.value)}
-                className="w-full rounded-xl border border-hairline bg-white/[0.03] px-4 py-3 text-sm text-paper outline-none transition-colors focus:border-electric/60"
+                className="w-full rounded-xl border border-hairline bg-paper/[0.05] px-4 py-3 text-sm text-paper outline-none transition-colors focus:border-electric/60"
               />
             )}
           </div>
@@ -115,7 +115,7 @@ export default function PartnerForm() {
         <button
           type="submit"
           disabled={submitting}
-          className="group mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-electric px-8 py-4 text-sm font-semibold text-ink shadow-glow transition-transform hover:-translate-y-0.5 disabled:opacity-60 sm:w-auto"
+          className="group mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-electric px-8 py-4 text-sm font-semibold text-onaccent shadow-glow transition-transform hover:-translate-y-0.5 disabled:opacity-60 sm:w-auto"
         >
           {submitting ? "Sending…" : "Send"}
           <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>

@@ -19,7 +19,7 @@ export default function HowItWorks() {
               className="absolute left-0 top-0 h-0.5 w-0 bg-electric transition-all duration-500 group-hover:w-full"
             />
             <div className="flex items-baseline justify-between">
-              <span className="font-display text-4xl font-semibold tracking-tightest text-ink-600 transition-colors group-hover:text-electric">
+              <span className="font-display text-4xl font-semibold tracking-tightest text-ink-600 transition-colors group-hover:text-electric-bright">
                 {step.id}
               </span>
               <span className="mono text-[10px] uppercase tracking-[0.2em] text-muted">Stage</span>

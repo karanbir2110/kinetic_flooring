@@ -29,13 +29,13 @@ function Honeycomb() {
           <polygon
             points={hexPoints(cell.x, cell.y, r - 2)}
             fill="none"
-            stroke={cell.lit ? "#E2672A" : "rgba(247,236,216,0.16)"}
+            stroke={cell.lit ? "rgb(var(--c-electric))" : "rgb(var(--c-paper) / 0.16)"}
             strokeWidth={cell.lit ? 1.2 : 0.7}
           />
           {cell.lit && (
             <polygon
               points={hexPoints(cell.x, cell.y, r - 2)}
-              fill={i % 5 === 0 ? "#E0B04A" : "#E2672A"}
+              fill={i % 5 === 0 ? "rgb(var(--c-energy))" : "rgb(var(--c-electric))"}
               className="tile-lit"
               style={{ animationDelay: `${cell.delay}s` }}
               opacity="0.18"

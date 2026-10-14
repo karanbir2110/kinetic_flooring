@@ -2,6 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =====================================================================
+   COLOR SCHEMES
+   Values are space-separated RGB channels so Tailwind opacity modifiers
+   (bg-electric/20, border-paper/40 ...) keep working.
+   Switch by setting data-theme="1" | "2" | "3" on <html>.
+
+   Roles:
+     ink*          page background + surface layers
+     paper*        text colors
+     electric*     primary accent (fills, strokes, buttons)
+     energy*       secondary accent
+     onaccent      text that sits on top of an electric fill
+     muted         quiet captions
+   ===================================================================== */
+
+/* ---- Scheme 1 : Old Rose / Sea Shell / Sky Blue (light) ---- */
+:root,
+:root[data-theme="1"] {
+  color-scheme: light;
+  --c-ink: 250 240 234;          /* Sea Shell  #FAF0EA */
+  --c-ink-900: 243 228 219;      /* #F3E4DB */
+  --c-ink-800: 237 217 206;      /* #EDD9CE */
+  --c-ink-700: 230 206 193;      /* #E6CEC1 */
+  --c-ink-600: 227 180 188;      /* #E3B4BC (rose tint) */
+  --c-paper: 58 35 41;           /* deep rose-brown #3A2329 */
+  --c-paper-dim: 107 74 83;      /* #6B4A53 */
+  --c-electric: 225 154 166;     /* Old Rose   #E19AA6 */
+  --c-electric-bright: 176 74 96;/* readable rose #B04A60 */
+  --c-electric-deep: 140 52 72;  /* #8C3448 */
+  --c-energy: 130 176 206;       /* Sky Blue   #82B0CE */
+  --c-energy-dim: 52 112 150;    /* readable blue #347096 */
+  --c-onaccent: 58 35 41;
+  --c-muted: 125 92 101;         /* #7D5C65 */
+  --theme-color: #FAF0EA;
+}
+
+/* ---- Scheme 2 : Merino / Rock Blue / Venice Blue (light) ---- */
+:root[data-theme="2"] {
+  color-scheme: light;
+  --c-ink: 245 238 221;          /* Merino #F5EEDD */
+  --c-ink-900: 236 227 204;      /* #ECE3CC */
+  --c-ink-800: 227 216 188;      /* #E3D8BC */
+  --c-ink-700: 217 205 174;      /* #D9CDAE */
+  --c-ink-600: 196 214 224;      /* #C4D6E0 (blue tint) */
+  --c-paper: 12 48 69;           /* deep Venice #0C3045 */
+  --c-paper-dim: 38 83 108;      /* #26536C */
+  --c-electric: 22 88 123;       /* Venice Blue #16587B */
+  --c-electric-bright: 29 110 152;/* #1D6E98 */
+  --c-electric-deep: 15 65 96;   /* #0F4160 */
+  --c-energy: 132 179 206;       /* Rock Blue #84B3CE */
+  --c-energy-dim: 48 112 148;    /* readable blue #307094 */
+  --c-onaccent: 245 238 221;     /* Merino on Venice Blue */
+  --c-muted: 74 111 133;         /* #4A6F85 */
+  --theme-color: #F5EEDD;
+}
+
+/* ---- Scheme 3 : Cream #FFECD1 on Burgundy #3E000C (dark) ---- */
+:root[data-theme="3"] {
+  color-scheme: dark;
+  --c-ink: 62 0 12;              /* #3E000C */
+  --c-ink-900: 52 0 9;           /* #340009 */
+  --c-ink-800: 43 0 7;           /* #2B0007 */
+  --c-ink-700: 77 15 28;         /* #4D0F1C */
+  --c-ink-600: 106 36 52;        /* #6A2434 */
+  --c-paper: 255 236 209;        /* #FFECD1 */
+  --c-paper-dim: 227 203 176;    /* #E3CBB0 */
+  --c-electric: 255 236 209;     /* #FFECD1 */
+  --c-electric-bright: 255 246 230;/* #FFF6E6 */
+  --c-electric-deep: 217 190 155;/* #D9BE9B */
+  --c-energy: 188 153 140;       /* cream/burgundy blend #BC998C */
+  --c-energy-dim: 224 191 169;   /* #E0BFA9 */
+  --c-onaccent: 62 0 12;         /* burgundy on cream */
+  --c-muted: 197 165 150;        /* #C5A596 */
+  --theme-color: #3E000C;
+}
+
 :root {
   --font-display: "Cormorant Garamond";
   --font-body: "Mukta";
@@ -19,19 +95,20 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 88px;
-  background-color: #140A08;
+  background-color: rgb(var(--c-ink));
 }
 
 body {
-  background-color: #140A08;
-  color: #F7ECD8;
+  background-color: rgb(var(--c-ink));
+  color: rgb(var(--c-paper));
+  transition: background-color 0.45s ease, color 0.45s ease;
   font-family: var(--font-body), system-ui, sans-serif;
   overflow-x: hidden;
 }
 
 ::selection {
-  background: rgba(226,103,42, 0.35);
-  color: #ffffff;
+  background: rgb(var(--c-electric) / 0.4);
+  color: rgb(var(--c-paper));
 }
 
 /* ---- Typographic helpers ---- */
@@ -44,7 +121,7 @@ body {
   font-size: 0.72rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #A8957F;
+  color: rgb(var(--c-muted));
 }
 .font-deva {
   font-family: var(--font-deva), serif;
@@ -63,12 +140,12 @@ body {
 
 /* ---- Hairline + grid textures ---- */
 .hairline-t {
-  border-top: 1px solid rgba(247,236,216, 0.08);
+  border-top: 1px solid rgb(var(--c-paper) / 0.08);
 }
 .grid-texture {
   background-image:
-    linear-gradient(rgba(247,236,216, 0.028) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(247,236,216, 0.028) 1px, transparent 1px);
+    linear-gradient(rgb(var(--c-paper) / 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--c-paper) / 0.05) 1px, transparent 1px);
   background-size: 64px 64px;
 }
 
@@ -143,7 +220,7 @@ body {
 
 /* ---- Focus visibility ---- */
 :focus-visible {
-  outline: 2px solid #F2994A;
+  outline: 2px solid rgb(var(--c-electric-bright));
   outline-offset: 3px;
   border-radius: 4px;
 }
