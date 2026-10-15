@@ -1,12 +1,31 @@
-export type QuestionType = "text" | "email" | "phone" | "textarea" | "select" | "rating";
+export type QuestionType =
+  | "text"
+  | "email"
+  | "phone"
+  | "textarea"
+  | "select"      // dropdown
+  | "radio"       // tap-to-select, single choice
+  | "multiselect" // tap-to-select, several choices (see maxSelect)
+  | "checkbox"    // single tick box
+  | "rating";
+
+/** Show this question only when another question has one of these answers. */
+export type ShowIf = {
+  questionId: string;
+  equals: string[];
+};
 
 export type Question = {
   id: string;
   label: string;
   type: QuestionType;
   placeholder?: string;
-  /** Only used when type === "select" */
+  /** Used by select, radio and multiselect */
   options?: string[];
+  /** multiselect only: max number of options the visitor may pick */
+  maxSelect?: number;
+  /** Conditional display. Omit to always show. */
+  showIf?: ShowIf;
   required: boolean;
   active: boolean;
   order: number;

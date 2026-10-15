@@ -24,8 +24,9 @@ export default function Home() {
         <Problem />
         <Team />
         <Applications />
-        <Roadmap />
         <FinalCTA />
+        <Roadmap />
+        
       </main>
       <Footer />
     </>

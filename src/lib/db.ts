@@ -32,6 +32,8 @@ export async function createQuestion(
       type: input.type,
       placeholder: input.placeholder ?? null,
       options: input.options ?? null,
+      max_select: input.maxSelect ?? null,
+      show_if: input.showIf ?? null,
       required: input.required,
       active: input.active,
       order: input.order,
@@ -46,9 +48,15 @@ export async function updateQuestion(
   id: string,
   patch: Partial<Omit<Question, "id">>
 ): Promise<Question | null> {
+  // Translate camelCase fields to the snake_case DB columns.
+  const { maxSelect, showIf, ...rest } = patch;
+  const dbPatch: Record<string, unknown> = { ...rest };
+  if (maxSelect !== undefined) dbPatch.max_select = maxSelect ?? null;
+  if (showIf !== undefined) dbPatch.show_if = showIf ?? null;
+
   const { data, error } = await supabaseServer
     .from("questions")
-    .update(patch)
+    .update(dbPatch)
     .eq("id", id)
     .select()
     .maybeSingle();
@@ -105,6 +113,8 @@ function rowToQuestion(row: any): Question {
     type: row.type,
     placeholder: row.placeholder ?? undefined,
     options: row.options ?? undefined,
+    maxSelect: row.max_select ?? undefined,
+    showIf: row.show_if ?? undefined,
     required: row.required,
     active: row.active,
     order: row.order,

@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { addResponse, getActiveQuestions } from "@/lib/db";
+import { answerList, isVisible } from "@/lib/visibility";
 import type { Answer } from "@/lib/types";
 
 export async function POST(request: Request) {
@@ -14,6 +15,9 @@ export async function POST(request: Request) {
 
     const answers: Answer[] = [];
     for (const question of questions) {
+      // Hidden by a condition (e.g. budget when "Just curious") -> ignore entirely.
+      if (!isVisible(question, questions, submitted)) continue;
+
       const value = (submitted[question.id] ?? "").toString().trim();
       if (question.required && !value) {
         return NextResponse.json(
@@ -21,9 +25,24 @@ export async function POST(request: Request) {
           { status: 400 }
         );
       }
-      if (value) {
-        answers.push({ questionId: question.id, label: question.label, value });
+      if (!value) continue;
+
+      // Choice questions: only accept the configured options.
+      if (["select", "radio", "multiselect"].includes(question.type)) {
+        const chosen = answerList(question, value);
+        const allowed = question.options ?? [];
+        if (chosen.some((c) => !allowed.includes(c))) {
+          return NextResponse.json({ error: `Invalid choice for "${question.label}".` }, { status: 400 });
+        }
+        if (question.type === "multiselect" && question.maxSelect && chosen.length > question.maxSelect) {
+          return NextResponse.json(
+            { error: `Pick up to ${question.maxSelect} for "${question.label}".` },
+            { status: 400 }
+          );
+        }
       }
+
+      answers.push({ questionId: question.id, label: question.label, value });
     }
 
     await addResponse(answers);
