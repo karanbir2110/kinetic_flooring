@@ -71,21 +71,21 @@ function withBreaks(text: string): ReactNode {
 
 export default function Highlights() {
   return (
-    <section aria-label="Highlights" className="relative py-14 sm:py-16">
+    <section aria-label="Highlights" className="relative py-8 sm:py-10">
       <div className="shell">
-        <div className="grid gap-px overflow-hidden rounded-2xl border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-x-12 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
           {highlights.map((item, i) => (
             <Reveal
               key={item.title}
               delay={i * 90}
-              className="flex min-w-0 flex-col items-center gap-4 bg-ink-900 px-6 py-9 text-center"
+              className="flex min-w-0 flex-col items-center gap-3 px-2 py-2 text-center"
             >
               {/* circular badge */}
               <span className="flex h-16 w-16 items-center justify-center rounded-full border border-electric/60 bg-electric/10 text-electric-bright">
                 {item.badge}
               </span>
-              <h3 className="font-display break-words text-xl font-semibold leading-tight tracking-tight">{withBreaks(item.title)}</h3>
-              <p className="max-w-[16rem] text-[0.95rem] leading-relaxed text-paper-dim">{item.body}</p>
+              <h3 className="font-display break-words text-base font-semibold leading-tight tracking-tight">{withBreaks(item.title)}</h3>
+              <p className="max-w-[15rem] text-sm leading-snug text-paper-dim">{item.body}</p>
             </Reveal>
           ))}
         </div>

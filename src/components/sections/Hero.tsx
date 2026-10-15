@@ -1,25 +1,5 @@
 import Image from "next/image";
-import { hero, brand } from "@/lib/content";
-
-function FlowStrip() {
-  return (
-    <div className="mt-10 flex flex-wrap items-center gap-x-3 gap-y-3">
-      {hero.flow.map((step, i) => (
-        <div key={step} className="flex items-center gap-3">
-          <span className="mono text-xs uppercase tracking-[0.18em] text-paper">
-            <span className="text-electric-bright">{String(i + 1).padStart(2, "0")}</span> {step}
-          </span>
-          {i < hero.flow.length - 1 && (
-            <svg width="34" height="8" viewBox="0 0 34 8" aria-hidden className="text-electric-bright">
-              <line x1="0" y1="4" x2="26" y2="4" stroke="currentColor" strokeWidth="1" />
-              <path d="M26 1 L33 4 L26 7" fill="none" stroke="currentColor" strokeWidth="1" />
-            </svg>
-          )}
-        </div>
-      ))}
-    </div>
-  );
-}
+import { hero } from "@/lib/content";
 
 export default function Hero() {
   return (
@@ -54,7 +34,7 @@ export default function Hero() {
               The font size scales with the screen width (clamp) so it always fits. */}
           <h1 className="font-display mt-6 font-bold leading-[1.02] tracking-tightest text-[length:clamp(1.6rem,8.4vw,2.4rem)] sm:whitespace-nowrap sm:text-[length:clamp(1.9rem,4.6vw,3.6rem)]">
             <span className="block whitespace-nowrap sm:inline">{hero.title[0]}</span>
-            <span className="block whitespace-nowrap text-electric-bright sm:ml-[0.3em] sm:inline">{hero.title[1]}</span>
+            <span className="block whitespace-nowrap text-electric-bright sm:inline">{hero.title[1]}</span>
           </h1>
 
           <div className="max-w-3xl">
@@ -77,12 +57,6 @@ export default function Hero() {
                 {hero.ctaSecondary.label}
               </a>
             </div>
-
-            <FlowStrip />
-
-            <p className="mono mt-10 text-xs uppercase tracking-[0.18em] text-muted">
-              {brand.microStatement}
-            </p>
           </div>
         </div>
       </div>

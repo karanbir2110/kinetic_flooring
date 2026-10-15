@@ -121,7 +121,7 @@ body {
 }
 .eyebrow {
   font-family: var(--font-cinzel), serif;
-  font-size: 0.72rem;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: rgb(var(--c-muted));
@@ -160,73 +160,31 @@ body {
   background-size: 64px 64px;
 }
 
-/* ---- Scroll reveal ---- */
+/* ---- Animations removed ----
+   Kept as plain, static classes so existing components that still reference
+   them (Reveal, flow-path, tile-lit, landing-fade, pulse-dot) keep working
+   without any motion. */
 .reveal {
-  opacity: 0;
-  transform: translateY(16px);
-  transition:
-    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform;
-}
-.reveal.is-in {
   opacity: 1;
   transform: none;
 }
 
-/* ---- Energy flow line (SVG stroke draw) ---- */
+/* Energy flow line: static dashed line, no movement */
 .flow-path {
   stroke-dasharray: 6 10;
-  animation: dashmove 1.6s linear infinite;
-}
-@keyframes dashmove {
-  to {
-    stroke-dashoffset: -32;
-  }
 }
 .pulse-dot {
-  animation: pulseGlow 2.6s ease-in-out infinite;
-}
-@keyframes pulseGlow {
-  0%,
-  100% {
-    opacity: 0.35;
-    r: 3;
-  }
-  50% {
-    opacity: 1;
-    r: 4.5;
-  }
+  opacity: 0.7;
 }
 
-/* ---- Landing page entrance ---- */
+/* Landing page: content is simply visible, no entrance fade */
 .landing-fade {
-  opacity: 0;
-  animation: landingFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-@keyframes landingFadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
+  opacity: 1;
 }
 
-/* ---- Tile illumination ---- */
+/* Lit tiles: fixed, no pulsing */
 .tile-lit {
-  animation: tilePulse 3.4s ease-in-out infinite;
-}
-@keyframes tilePulse {
-  0%,
-  100% {
-    opacity: 0.25;
-  }
-  50% {
-    opacity: 1;
-  }
+  opacity: 1;
 }
 
 /* ---- Focus visibility ---- */
