@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "Spandan",
     images: [
       {
-        url: "/assets/hero-floor.jpgg",
+        url: "/assets/hero-floor.jpg",
         width: 1024,
         height: 886,
         alt: "Kinetic hexagonal flooring in a high-traffic concourse",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#FAF0EA",
+  themeColor: "#F5EEDD",
   width: "device-width",
   initialScale: 1,
 };
@@ -62,7 +62,7 @@ export default function RootLayout({
         {/* Apply the saved color scheme before first paint (prevents a flash). */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{var t=localStorage.getItem("spandan-theme");if(t==="1"||t==="2"||t==="3"){document.documentElement.setAttribute("data-theme",t);var m={"1":"#FAF0EA","2":"#F5EEDD","3":"#3E000C"};var x=document.querySelector('meta[name="theme-color"]');if(x)x.setAttribute("content",m[t])}}catch(e){}`,
+            __html: `try{var t=localStorage.getItem("spandan-theme");if(t==="1"||t==="2"||t==="3"){document.documentElement.setAttribute("data-theme",t);var m={"1":"#F5EEDD","2":"#FAF0EA","3":"#3E000C"};var x=document.querySelector('meta[name="theme-color"]');if(x)x.setAttribute("content",m[t])}}catch(e){}`,
           }}
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />

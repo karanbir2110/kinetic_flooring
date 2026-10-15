@@ -17,12 +17,11 @@
      muted         quiet captions
    ===================================================================== */
 
-/* ---- Scheme 1 : Old Rose / Sea Shell / Sky Blue (light) ----
+/* ---- Scheme 2 : Old Rose / Sea Shell / Sky Blue (light) ----
    Rose  = buttons, hexagons, accent headline text
    Blue  = card + footer surfaces, hover states, big step numbers, diagram details
    Sea Shell = page background                                              */
-:root,
-:root[data-theme="1"] {
+:root[data-theme="2"] {
   color-scheme: light;
   --c-ink: 250 240 234;          /* Sea Shell  #FAF0EA (page background) */
   --c-ink-900: 226 238 246;      /* #E2EEF6  pale sky blue — cards, footer */
@@ -41,8 +40,9 @@
   --theme-color: #FAF0EA;
 }
 
-/* ---- Scheme 2 : Merino / Rock Blue / Venice Blue (light) ---- */
-:root[data-theme="2"] {
+/* ---- Scheme 1 (DEFAULT) : Merino / Rock Blue / Venice Blue (light) ---- */
+:root,
+:root[data-theme="1"] {
   color-scheme: light;
   --c-ink: 245 238 221;          /* Merino #F5EEDD */
   --c-ink-900: 236 227 204;      /* #ECE3CC */

@@ -20,7 +20,7 @@ export default function Team() {
         <p className="mt-8 max-w-4xl text-pretty text-xl text-paper-dim sm:text-2xl">
           {team.intro}
         </p>
-        <h2 className="font-display mt-6 max-w-5xl text-balance text-4xl font-bold leading-[1.1] tracking-tightest sm:text-5xl lg:text-[3.5rem]">
+        <h2 className="font-display mt-6 max-w-5xl text-balance text-4xl font-bold leading-[1.4] tracking-tightest sm:text-5xl lg:text-[3.5rem]">
           {team.statement}
         </h2>
       </Reveal>

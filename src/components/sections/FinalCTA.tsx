@@ -18,7 +18,7 @@ export default function FinalCTA() {
 
       <div className="shell relative z-10">
         <Reveal className="mx-auto max-w-5xl text-center">
-          <h2 className="font-display text-balance text-5xl font-bold leading-[1] tracking-tightest sm:text-6xl lg:text-[5rem]">
+          <h2 className="font-display text-balance text-5xl font-bold leading-[1.25] tracking-tightest sm:text-6xl lg:text-[5rem]">
             <span className="block">{finalCta.title[0]}</span>
             <span className="block text-electric-bright">{finalCta.title[1]}</span>
           </h2>

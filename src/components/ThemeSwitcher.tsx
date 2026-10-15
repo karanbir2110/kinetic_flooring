@@ -9,14 +9,14 @@ const DEFAULT_THEME: ThemeId = "1";
 
 /** Swatches shown inside each button (purely visual). */
 const THEMES: { id: ThemeId; name: string; colors: [string, string, string] }[] = [
-  { id: "1", name: "Old Rose · Sea Shell · Sky Blue", colors: ["#E19AA6", "#FAF0EA", "#82B0CE"] },
-  { id: "2", name: "Merino · Rock Blue · Venice Blue", colors: ["#F5EEDD", "#84B3CE", "#16587B"] },
+  { id: "1", name: "Merino · Rock Blue · Venice Blue", colors: ["#F5EEDD", "#84B3CE", "#16587B"] },
+  { id: "2", name: "Old Rose · Sea Shell · Sky Blue", colors: ["#E19AA6", "#FAF0EA", "#82B0CE"] },
   { id: "3", name: "Cream on Burgundy", colors: ["#FFECD1", "#3E000C", "#BC998C"] },
 ];
 
 const META_COLORS: Record<ThemeId, string> = {
-  "1": "#FAF0EA",
-  "2": "#F5EEDD",
+  "1": "#F5EEDD",
+  "2": "#FAF0EA",
   "3": "#3E000C",
 };
 
@@ -73,7 +73,7 @@ export default function ThemeSwitcher() {
     <div
       role="group"
       aria-label="Color scheme"
-      className="fixed bottom-4 right-4 z-[70] flex items-center gap-1.5 rounded-full border border-hairline bg-ink/85 p-1.5 shadow-lg backdrop-blur-md sm:bottom-6 sm:right-6"
+      className="fixed bottom-4 right-4 z-[70] flex items-center gap-1.5 rounded-full border border-transparent bg-transparent p-1.5 shadow-none sm:bottom-6 sm:right-6"
     >
       {THEMES.map((t) => {
         const active = theme === t.id;
