@@ -6,7 +6,13 @@ import { applications } from "@/lib/content";
 export default function Applications() {
   return (
     <Section id="applications" width="wide">
-      <SectionHeading eyebrow={applications.eyebrow} title={applications.title} align="center" />
+      <SectionHeading
+        eyebrow={applications.eyebrow}
+        title={applications.title}
+        align="center"
+        // line spacing for the heading (tailwind later class wins) – raise/lower the number to taste
+        titleClassName="!leading-[1.5]"
+      />
 
       <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-4">
         {applications.cards.map((card, i) => (

@@ -254,7 +254,7 @@ export const applications = {
       use: "Dense, repetitive footfall across concourses and platforms.",
     },
     {
-      name: "Universities & campuses",
+      name: "Universities",
       use: "Demonstration infrastructure and student engagement.",
     },
     {

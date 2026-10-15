@@ -63,12 +63,15 @@ export function SectionHeading({
   lead,
   align = "left",
   className = "",
+  titleClassName = "",
 }: {
   eyebrow: string;
   title: ReactNode;
   lead?: string;
   align?: "left" | "center";
   className?: string;
+  /** extra classes for the <h2>, e.g. "leading-[1.3]" to change line spacing */
+  titleClassName?: string;
 }) {
   return (
     <Reveal
@@ -77,7 +80,7 @@ export function SectionHeading({
       <div className={align === "center" ? "flex justify-center" : ""}>
         <Eyebrow>{eyebrow}</Eyebrow>
       </div>
-      <h2 className="font-display mt-8 max-w-5xl text-balance text-4xl font-bold leading-[1.05] tracking-tightest sm:text-5xl lg:text-[3.5rem]">
+      <h2 className={`font-display mt-8 max-w-5xl text-balance text-4xl font-bold leading-[1.05] tracking-tightest sm:text-5xl lg:text-[3.5rem] ${titleClassName}`}>
         {title}
       </h2>
       {lead && (
