@@ -22,19 +22,19 @@ export const landing = {
 };
 
 export const nav = [
-  { label: "Technology", href: "#solution" },
+  { label: "What We Offer", href: "#problem" },
+  { label: "Our Team", href: "#team" },
   { label: "Applications", href: "#applications" },
-  { label: "Engineering", href: "#engineering" },
-  { label: "Vision", href: "#roadmap" },
+  { label: "Partner", href: "#roadmap" },
 ];
 
 /* ---- Section 1: Hero ---- */
 export const hero = {
   eyebrow: "Karm Energy Returns",
   title: ["STEP.POWER.", "ENGAGE.IMPACT."],
-  sub: "KARM turns everyday footsteps into power, and power into attention. Our kinetic tiles turn foot traffic into electricity and power a built-in LED display, so your message is carried by the very people it reachesKARM turns campaigns, events, CSR commitments and games into experiences people step into, not just walk past it.",
+  sub: "KARM turns everyday footsteps into power, and power into attention. Our kinetic tiles turn foot traffic into electricity and power a built-in LED display, so your message is carried by the very people it reachesKARM turns campaigns, events, CSR commitments and games into experiences people step into, not just walk past it..",
   flow: ["Step", "Harvest", "Convert", "Store"],
-  ctaPrimary: { label: "Explore the technology", href: "#solution" },
+  ctaPrimary: { label: "See what KARM offers", href: "#problem" },
   ctaSecondary: { label: "Partner with us", href: "#contact" },
 };
 
@@ -397,9 +397,9 @@ export const finalCta = {
 
 export const footer = {
   columns: [
-    { label: "Technology", href: "#solution" },
+    { label: "What We Offer", href: "#problem" },
+    { label: "Our Team", href: "#team" },
     { label: "Applications", href: "#applications" },
-    { label: "Engineering", href: "#engineering" },
     { label: "Contact", href: "#contact" },
   ],
 };
