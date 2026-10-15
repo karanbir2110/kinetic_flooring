@@ -1,12 +1,11 @@
 import Reveal from "@/components/ui/Reveal";
-import { hexPoints } from "@/components/ui/Hex";
 import { finalCta } from "@/lib/content";
 import PartnerForm from "./PartnerForm";
 
 export default function FinalCTA() {
   return (
     <section id="contact" className="relative overflow-hidden py-28 sm:py-36 lg:py-44">
-      {/* ambient hex glow backdrop */}
+      {/* ambient glow backdrop (hexagons removed) */}
       <svg className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.35]" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" aria-hidden>
         <defs>
           <radialGradient id="ctaGlow" cx="50%" cy="40%" r="60%">
@@ -15,18 +14,6 @@ export default function FinalCTA() {
           </radialGradient>
         </defs>
         <rect width="1200" height="500" fill="url(#ctaGlow)" />
-        {[[240, 120], [980, 150], [180, 380], [1020, 400], [600, 470]].map(([x, y], i) => (
-          <polygon
-            key={i}
-            points={hexPoints(x, y, 40)}
-            fill="none"
-            stroke={i % 2 ? "rgb(var(--c-energy))" : "rgb(var(--c-electric))"}
-            strokeWidth="1"
-            opacity="0.4"
-            className="tile-lit"
-            style={{ animationDelay: `${i * 0.5}s` }}
-          />
-        ))}
       </svg>
 
       <div className="shell relative z-10">

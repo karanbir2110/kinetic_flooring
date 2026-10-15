@@ -391,7 +391,7 @@ export const finalCta = {
   },
   ctaSecondary: {
     label: "Contact the team",
-    href: "mailto:hello@Spandan-kinetic.example",
+    href: "mailto:geetnagpal03752@gmail.com",
   },
 };
 

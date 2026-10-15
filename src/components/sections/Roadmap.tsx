@@ -31,7 +31,13 @@ const partner = {
 export default function Roadmap() {
   return (
     <Section id="roadmap" width="wide">
-      <SectionHeading eyebrow={partner.eyebrow} title={partner.title} align="center" />
+      <SectionHeading
+        eyebrow={partner.eyebrow}
+        title={partner.title}
+        align="center"
+        // line spacing for the heading – raise/lower the number to taste
+        titleClassName="!leading-[1.5]"
+      />
 
       <div className="relative mt-20">
         {/* connecting line: runs from the centre of the 1st marker to the centre of the 3rd
