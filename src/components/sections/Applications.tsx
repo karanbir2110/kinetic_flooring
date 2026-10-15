@@ -5,17 +5,17 @@ import { applications } from "@/lib/content";
 
 export default function Applications() {
   return (
-    <Section id="applications">
-      <SectionHeading eyebrow={applications.eyebrow} title={applications.title} />
+    <Section id="applications" width="wide">
+      <SectionHeading eyebrow={applications.eyebrow} title={applications.title} align="center" />
 
-      <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-4">
         {applications.cards.map((card, i) => (
           <Reveal
             key={card.name}
             delay={(i % 4) * 70}
-            className="group relative flex min-h-[190px] flex-col justify-between gap-6 bg-ink-900 p-7 transition-colors hover:bg-ink-800"
+            className="group relative flex min-h-[250px] flex-col justify-between gap-8 bg-ink-900 p-9 transition-colors hover:bg-ink-800"
           >
-            <svg viewBox="0 0 40 40" className="h-8 w-8" aria-hidden>
+            <svg viewBox="0 0 40 40" className="h-11 w-11" aria-hidden>
               <polygon
                 points={hexPoints(20, 20, 17)}
                 fill="none"
@@ -31,8 +31,10 @@ export default function Applications() {
               />
             </svg>
             <div>
-              <h3 className="font-display text-lg font-semibold tracking-tight">{card.name}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-paper-dim">{card.use}</p>
+              <h3 className="font-display text-2xl font-semibold leading-tight tracking-tight sm:text-[1.65rem]">
+                {card.name}
+              </h3>
+              <p className="mt-3 text-lg leading-relaxed text-paper-dim">{card.use}</p>
             </div>
           </Reveal>
         ))}

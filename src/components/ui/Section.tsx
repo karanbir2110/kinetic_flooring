@@ -16,13 +16,16 @@ export function Section({
   /** "default" = 1240px, "wide" = 1560px, "full" = edge to edge (keeps side padding) */
   width?: "default" | "wide" | "full";
 }) {
+  const shellClass =
+    width === "wide"
+      ? "shell shell-wide"
+      : width === "full"
+        ? "shell shell-full"
+        : "shell";
+
   return (
     <section id={id} className={`relative py-24 sm:py-28 lg:py-36 ${className}`}>
-      <div
-        className={`shell ${
-          width === "wide" ? "shell-wide" : width === "full" ? "shell-full" : ""
-        }`}
-      >
+      <div className={shellClass}>
         {hairline && <div className="hairline-t mb-16" aria-hidden />}
         {children}
       </div>
@@ -30,13 +33,26 @@ export function Section({
   );
 }
 
-export function Eyebrow({ children, dashRight = false }: { children: ReactNode; dashRight?: boolean }) {
+/**
+ * Eyebrow — now identical to the hero's: dash on BOTH sides, same size.
+ * Pass `className` for any one-off tweaks.
+ */
+export function Eyebrow({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  /** kept so existing <Eyebrow dashRight> calls still compile; dashes are always on both sides now */
+  dashRight?: boolean;
+  className?: string;
+}) {
   return (
-    <div className="flex items-center gap-3">
-      <span className="inline-block h-px w-8 bg-electric/70" aria-hidden />
-      <span className="eyebrow">{children}</span>
-      {/* dash on the right side too (used for centered headings) */}
-      {dashRight && <span className="inline-block h-px w-8 bg-electric/70" aria-hidden />}
+    <div className={`flex items-center gap-4 ${className}`}>
+      <span className="inline-block h-px w-12 shrink-0 bg-electric" aria-hidden />
+      <span className="eyebrow !text-[length:clamp(1.1rem,1.8vw,1.4rem)] text-paper-dim">
+        {children}
+      </span>
+      <span className="inline-block h-px w-12 shrink-0 bg-electric" aria-hidden />
     </div>
   );
 }
@@ -59,14 +75,14 @@ export function SectionHeading({
       className={`${align === "center" ? "mx-auto text-center items-center" : ""} flex flex-col ${className}`}
     >
       <div className={align === "center" ? "flex justify-center" : ""}>
-        <Eyebrow dashRight={align === "center"}>{eyebrow}</Eyebrow>
+        <Eyebrow>{eyebrow}</Eyebrow>
       </div>
-      <h2 className="font-display mt-5 max-w-3xl text-balance text-3xl font-semibold leading-[1.05] tracking-tightest sm:text-4xl lg:text-5xl">
+      <h2 className="font-display mt-8 max-w-5xl text-balance text-4xl font-bold leading-[1.05] tracking-tightest sm:text-5xl lg:text-[3.5rem]">
         {title}
       </h2>
       {lead && (
         <p
-          className={`mt-5 max-w-2xl text-base leading-relaxed text-paper-dim sm:text-lg ${
+          className={`mt-6 max-w-3xl text-lg leading-relaxed text-paper-dim sm:text-xl ${
             align === "center" ? "mx-auto" : ""
           }`}
         >

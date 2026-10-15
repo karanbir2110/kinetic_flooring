@@ -20,7 +20,7 @@ const iconProps = {
 const highlights: { title: string; body: string; badge: ReactNode }[] = [
   {
     title: "Power from People",
-    body: "Every step becomes electricity. Renewable power, made where people move.",
+    body: "Renewable power, made where people move.",
     // lightning bolt
     badge: (
       <svg {...iconProps}>
@@ -32,7 +32,11 @@ const highlights: { title: string; body: string; badge: ReactNode }[] = [
     // The number goes inside the circular badge
     title: "kg of CO₂ avoided",
     body: "per kWh of grid power replaced.",
-    badge: <span className="font-display text-xl font-bold leading-none tracking-tight">0.71</span>,
+    badge: (
+      <span className="font-display text-xl font-bold leading-none tracking-tight">
+        0.71
+      </span>
+    ),
   },
   {
     title: "Sustainability, Experienced",
@@ -46,7 +50,7 @@ const highlights: { title: string; body: string; badge: ReactNode }[] = [
     ),
   },
   {
-    title: "INVITE.ENGAGE.CONNECT",
+    title: "Invite.Engage.Connect",
     body: "Every step becomes a moment with your brand.",
     // two linked circles
     badge: (
@@ -58,11 +62,14 @@ const highlights: { title: string; body: string; badge: ReactNode }[] = [
   },
 ];
 
-/** Lets long dotted titles (INVITE.ENGAGE.CONNECT) wrap after each full stop instead of overflowing. */
+/**
+ * Lets long dotted titles (INVITE.ENGAGE.CONNECT) wrap after each full stop
+ * instead of overflowing on narrow columns / mid-size screens.
+ */
 function withBreaks(text: string): ReactNode {
   const parts = text.split(/(?<=\.)/);
   return parts.map((part, i) => (
-    <span key={i}>
+    <span key={i} className="whitespace-nowrap">
       {part}
       {i < parts.length - 1 && <wbr />}
     </span>
@@ -71,21 +78,33 @@ function withBreaks(text: string): ReactNode {
 
 export default function Highlights() {
   return (
-    <section aria-label="Highlights" className="relative py-8 sm:py-10">
+    <section
+      aria-label="Highlights"
+      className="relative py-10 sm:py-12 lg:py-14"
+    >
       <div className="shell">
-        <div className="grid gap-x-12 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
           {highlights.map((item, i) => (
             <Reveal
               key={item.title}
               delay={i * 90}
-              className="flex min-w-0 flex-col items-center gap-3 px-2 py-2 text-center"
+              className="flex min-w-0 flex-col items-center gap-4 px-2 py-2 text-center"
             >
               {/* circular badge */}
-              <span className="flex h-16 w-16 items-center justify-center rounded-full border border-electric/60 bg-electric/10 text-electric-bright">
+              <span
+                aria-hidden
+                className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-electric/60 bg-electric/10 text-electric-bright shadow-glow/40"
+              >
                 {item.badge}
               </span>
-              <h3 className="font-display break-words text-base font-semibold leading-tight tracking-tight">{withBreaks(item.title)}</h3>
-              <p className="max-w-[15rem] text-sm leading-snug text-paper-dim">{item.body}</p>
+
+              <h3 className="font-display text-[length:clamp(1rem,1.6vw,1.125rem)] font-semibold leading-tight tracking-tight text-paper break-words">
+                {withBreaks(item.title)}
+              </h3>
+
+              <p className="max-w-[16rem] text-[length:clamp(0.875rem,1.4vw,0.9375rem)] leading-snug text-paper-dim">
+                {item.body}
+              </p>
             </Reveal>
           ))}
         </div>

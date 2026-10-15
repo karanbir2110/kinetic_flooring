@@ -30,32 +30,27 @@ const partner = {
 
 export default function Roadmap() {
   return (
-    <Section id="roadmap">
-      <SectionHeading eyebrow={partner.eyebrow} title={partner.title} />
+    <Section id="roadmap" width="wide">
+      <SectionHeading eyebrow={partner.eyebrow} title={partner.title} align="center" />
 
-      <div className="relative mt-16">
-        {/* connecting line */}
+      <div className="relative mt-20">
+        {/* connecting line (top-[24px] = vertical centre of the h-12 markers) */}
         <span
-          className="absolute left-0 right-0 top-[18px] hidden h-px bg-gradient-to-r from-electric via-electric/40 to-energy lg:block"
+          className="absolute left-0 right-0 top-[24px] hidden h-px bg-gradient-to-r from-electric via-electric/40 to-energy lg:block"
           aria-hidden
         />
-        <ol className="grid gap-10 md:grid-cols-3 lg:grid-cols-3 lg:gap-6">
+        <ol className="grid gap-12 md:grid-cols-3 lg:grid-cols-3 lg:gap-10">
           {partner.steps.map((step, i) => (
-            <Reveal
-              as="li"
-              key={step.id}
-              delay={i * 100}
-              className="relative"
-            >
+            <Reveal as="li" key={step.id} delay={i * 100} className="relative">
               <div className="flex items-center gap-4 lg:block">
-                <span className="relative z-10 flex h-9 w-9 flex-none items-center justify-center rounded-full border border-electric/50 bg-ink text-electric-bright">
-                  <span className="mono text-xs">{step.id}</span>
+                <span className="relative z-10 flex h-12 w-12 flex-none items-center justify-center rounded-full border border-electric/50 bg-ink text-electric-bright">
+                  <span className="mono text-sm">{step.id}</span>
                 </span>
-                <h3 className="font-display text-xl font-semibold tracking-tight lg:mt-6">
+                <h3 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl lg:mt-8">
                   {step.title}
                 </h3>
               </div>
-              <p className="mt-3 text-[0.95rem] leading-relaxed text-paper-dim lg:pr-6">
+              <p className="mt-4 text-lg leading-relaxed text-paper-dim sm:text-xl lg:pr-6">
                 {step.body}
               </p>
             </Reveal>

@@ -30,17 +30,17 @@ export default function FinalCTA() {
       </svg>
 
       <div className="shell relative z-10">
-        <Reveal className="mx-auto max-w-3xl text-center">
-          <h2 className="font-display text-balance text-4xl font-bold leading-[0.98] tracking-tightest sm:text-6xl lg:text-7xl">
+        <Reveal className="mx-auto max-w-5xl text-center">
+          <h2 className="font-display text-balance text-5xl font-bold leading-[1] tracking-tightest sm:text-6xl lg:text-[5rem]">
             <span className="block">{finalCta.title[0]}</span>
             <span className="block text-electric-bright">{finalCta.title[1]}</span>
           </h2>
-          <p className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-paper-dim sm:text-lg">
+          <p className="mx-auto mt-9 max-w-3xl text-xl leading-relaxed text-paper-dim sm:text-2xl">
             {finalCta.body}
           </p>
           <PartnerForm />
 
-          <p className="mt-6 text-sm text-muted">
+          <p className="mt-8 text-base text-muted sm:text-lg">
             Prefer email?{" "}
             <a href={finalCta.ctaSecondary.href} className="text-paper-dim underline underline-offset-4 hover:text-paper">
               {finalCta.ctaSecondary.label}

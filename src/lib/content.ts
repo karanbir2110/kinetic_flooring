@@ -16,7 +16,7 @@ export const brand = {
 export const landing = {
   eyebrow: "KARM — Kinetic Energy Systems",
   title: ["Take a step", "towards sustainable energy."],
-  sub: "Every footstep carries a small amount of untapped power. Spandan turns ordinary floors into a quiet, continuous source of renewable energy.",
+  sub: "Every footstep carries a small amount of untapped power. These tiles turn ordinary floors into a quiet, continuous source of renewable energy.",
   cta: { label: "Enter KARM", href: "/home" },
   hint: "Tap to begin",
 };
@@ -32,7 +32,7 @@ export const nav = [
 export const hero = {
   eyebrow: "Karm Energy Returns",
   title: ["STEP.POWER.","ENGAGE.IMPACT."],
-  sub: "KARM turns everyday footsteps into power, and power into attention. Our kinetic tiles turn foot traffic into electricity and power a built-in LED display, so your message is carried by the very people it reaches KARM turns campaigns, events, CSR commitments and games into experiences people step into, not just walk past it.",
+  sub: "KARM turns everyday footsteps into power, and power into attention. Our kinetic tiles turn foot traffic into electricity and power a built-in LED display, so your message is carried by the very people it reaches. KARM turns campaigns, events, CSR commitments and games into experiences people step into, not just walk past it.",
   flow: ["Step", "Harvest", "Convert", "Store"],
   ctaPrimary: { label: "See what KARM offers", href: "#problem" },
   ctaSecondary: { label: "Partner with us", href: "#contact" },
