@@ -70,37 +70,24 @@ export default function ThemeSwitcher() {
   }, [choose]);
 
   return (
+    // Completely invisible: the three swatches are always at opacity 0 (no hover/focus reveal, no tooltip, default cursor).
+    // They still sit in the bottom-right corner and can be clicked there, and the 1 / 2 / 3 keys still switch schemes.
     <div
       role="group"
       aria-label="Color scheme"
-      className="fixed bottom-4 right-4 z-[70] flex items-center gap-1.5 rounded-full border border-transparent bg-transparent p-1.5 shadow-none sm:bottom-6 sm:right-6"
+      className="fixed bottom-4 right-4 z-[70] flex items-center gap-1.5 p-1.5 opacity-0 sm:bottom-6 sm:right-6"
     >
-      {THEMES.map((t) => {
-        const active = theme === t.id;
-        return (
-          <button
-            key={t.id}
-            type="button"
-            onClick={() => choose(t.id)}
-            aria-pressed={active}
-            aria-label={`Color scheme ${t.id}: ${t.name}`}
-            title={`${t.name} (press ${t.id})`}
-            className={`relative flex h-9 w-9 items-center justify-center rounded-full transition-all ${
-              active ? "ring-2 ring-electric-bright ring-offset-2 ring-offset-ink" : "opacity-80 hover:opacity-100"
-            }`}
-            style={{
-              background: `conic-gradient(from 210deg, ${t.colors[0]} 0 33%, ${t.colors[1]} 33% 66%, ${t.colors[2]} 66% 100%)`,
-            }}
-          >
-            <span
-              className="flex h-5 w-5 items-center justify-center rounded-full text-[11px] font-semibold leading-none"
-              style={{ background: "rgba(255,255,255,0.88)", color: "#2a1a1f" }}
-            >
-              {t.id}
-            </span>
-          </button>
-        );
-      })}
+      {THEMES.map((t) => (
+        <button
+          key={t.id}
+          type="button"
+          onClick={() => choose(t.id)}
+          aria-pressed={theme === t.id}
+          aria-label={`Color scheme ${t.id}: ${t.name}`}
+          tabIndex={-1}
+          className="h-9 w-9 cursor-default rounded-full outline-none"
+        />
+      ))}
     </div>
   );
 }
