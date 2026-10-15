@@ -1,6 +1,9 @@
 import { hexPoints } from "@/components/ui/Hex";
 import { brand, footer } from "@/lib/content";
 
+// Contact email shown in the footer
+const CONTACT_EMAIL = "geetnagpal03752@gmail.com";
+
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
@@ -16,6 +19,17 @@ export default function Footer() {
               <span className="font-display text-lg font-semibold tracking-tight">{brand.name}</span>
             </div>
             <p className="mono mt-4 text-xs uppercase tracking-[0.16em] text-muted">{brand.footerLine}</p>
+
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="mt-5 inline-flex items-center gap-2.5 break-all text-sm text-paper-dim transition-colors hover:text-electric-bright"
+            >
+              <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden>
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path d="M3.5 6.5 12 13l8.5-6.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              {CONTACT_EMAIL}
+            </a>
           </div>
 
           <nav aria-label="Footer" className="flex flex-wrap gap-x-10 gap-y-3">

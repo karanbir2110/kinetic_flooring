@@ -32,7 +32,7 @@ export const nav = [
 export const hero = {
   eyebrow: "Karm Energy Returns",
   title: ["STEP.POWER.", "ENGAGE.IMPACT."],
-  sub: "KARM turns everyday footsteps into power, and power into attention. Our kinetic tiles turn foot traffic into electricity and power a built-in LED display, so your message is carried by the very people it reachesKARM turns campaigns, events, CSR commitments and games into experiences people step into, not just walk past it..",
+  sub: "KARM turns everyday footsteps into power, and power into attention. Our kinetic tiles turn foot traffic into electricity and power a built-in LED display, so your message is carried by the very people it reachesKARM turns campaigns, events, CSR commitments and games into experiences people step into, not just walk past it.",
   flow: ["Step", "Harvest", "Convert", "Store"],
   ctaPrimary: { label: "Explore the technology", href: "#solution" },
   ctaSecondary: { label: "Partner with us", href: "#contact" },

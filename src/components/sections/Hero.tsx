@@ -97,17 +97,21 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 w-full pb-16 pt-28">
         <div className="shell">
+          <div className="flex items-center gap-3">
+            <span className="inline-block h-px w-8 bg-electric" aria-hidden />
+            <span className="eyebrow text-paper-dim">{hero.eyebrow}</span>
+            {/* NEW: matching dash on the right side */}
+            <span className="inline-block h-px w-8 bg-electric" aria-hidden />
+          </div>
+
+          {/* Title: stacked on phones, ONE line from the "sm" breakpoint up.
+              The font size scales with the screen width (clamp) so it always fits. */}
+          <h1 className="font-display mt-6 font-bold leading-[1.02] tracking-tightest text-[length:clamp(1.6rem,8.4vw,2.4rem)] sm:whitespace-nowrap sm:text-[length:clamp(1.9rem,4.6vw,3.6rem)]">
+            <span className="block whitespace-nowrap sm:inline">{hero.title[0]}</span>
+            <span className="block whitespace-nowrap text-electric-bright sm:ml-[0.3em] sm:inline">{hero.title[1]}</span>
+          </h1>
+
           <div className="max-w-3xl">
-            <div className="flex items-center gap-3">
-              <span className="inline-block h-px w-8 bg-electric" aria-hidden />
-              <span className="eyebrow text-paper-dim">{hero.eyebrow}</span>
-            </div>
-
-            <h1 className="font-display mt-6 text-balance text-[3.1rem] font-bold leading-[0.95] tracking-tightest sm:text-7xl lg:text-[5.6rem]">
-              <span className="block">{hero.title[0]}</span>
-              <span className="block text-electric-bright">{hero.title[1]}</span>
-            </h1>
-
             <p className="mt-7 max-w-xl text-lg leading-relaxed text-paper-dim sm:text-xl">
               {hero.sub}
             </p>

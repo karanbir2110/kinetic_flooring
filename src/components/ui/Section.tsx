@@ -30,11 +30,13 @@ export function Section({
   );
 }
 
-export function Eyebrow({ children }: { children: ReactNode }) {
+export function Eyebrow({ children, dashRight = false }: { children: ReactNode; dashRight?: boolean }) {
   return (
     <div className="flex items-center gap-3">
       <span className="inline-block h-px w-8 bg-electric/70" aria-hidden />
       <span className="eyebrow">{children}</span>
+      {/* dash on the right side too (used for centered headings) */}
+      {dashRight && <span className="inline-block h-px w-8 bg-electric/70" aria-hidden />}
     </div>
   );
 }
@@ -57,7 +59,7 @@ export function SectionHeading({
       className={`${align === "center" ? "mx-auto text-center items-center" : ""} flex flex-col ${className}`}
     >
       <div className={align === "center" ? "flex justify-center" : ""}>
-        <Eyebrow>{eyebrow}</Eyebrow>
+        <Eyebrow dashRight={align === "center"}>{eyebrow}</Eyebrow>
       </div>
       <h2 className="font-display mt-5 max-w-3xl text-balance text-3xl font-semibold leading-[1.05] tracking-tightest sm:text-4xl lg:text-5xl">
         {title}

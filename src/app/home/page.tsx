@@ -1,7 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Hero from "@/components/sections/Hero";
+import Highlights from "@/components/sections/Highlights";
 import Problem from "@/components/sections/Problem";
+import Team from "@/components/sections/Team";
 import Solution from "@/components/sections/Solution";
 import HowItWorks from "@/components/sections/HowItWorks";
 import Engineering from "@/components/sections/Engineering";
@@ -25,7 +27,9 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <Highlights />
         <Problem />
+        <Team />
         <Solution />
         <HowItWorks />
         <Engineering />
