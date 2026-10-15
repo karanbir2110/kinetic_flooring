@@ -6,12 +6,12 @@ import { hexPoints } from "@/components/ui/Hex";
 
 function Logo() {
   return (
-    <a href="#top" className="group flex items-center gap-2.5" aria-label={`${brand.name} home`}>
-      <svg viewBox="0 0 32 32" className="h-7 w-7" aria-hidden>
+    <a href="#top" className="group flex items-center gap-3" aria-label={`${brand.name} home`}>
+      <svg viewBox="0 0 32 32" className="h-10 w-10" aria-hidden>
         <polygon points={hexPoints(16, 16, 14)} fill="none" stroke="rgb(var(--c-electric))" strokeWidth="1.5" />
         <polygon points={hexPoints(16, 16, 7)} fill="rgb(var(--c-electric))" className="opacity-80 transition-opacity group-hover:opacity-100" />
       </svg>
-      <span className="font-display text-lg font-semibold tracking-tight text-paper">
+      <span className="font-display text-3xl font-semibold tracking-tight text-paper">
         {brand.name}
       </span>
     </a>
@@ -40,17 +40,17 @@ export default function Navbar() {
       <div className="shell">
         <div
           className={`flex items-center justify-between transition-all duration-300 ${
-            scrolled ? "h-14" : "h-20"
+            scrolled ? "h-[4.25rem]" : "h-24"
           }`}
         >
           <Logo />
 
-          <nav className="hidden items-center gap-9 md:flex" aria-label="Primary">
+          <nav className="hidden items-center gap-6 md:flex lg:gap-9" aria-label="Primary">
             {nav.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="mono text-xs uppercase tracking-[0.14em] text-paper-dim transition-colors hover:text-paper"
+                className="mono text-[0.9375rem] uppercase tracking-[0.12em] text-paper-dim transition-colors hover:text-paper lg:text-[1.0625rem]"
               >
                 {item.label}
               </a>
@@ -60,14 +60,14 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <a
               href="#contact"
-              className="hidden rounded-full border border-electric/50 bg-electric/10 px-5 py-2 text-sm font-medium text-paper transition-colors hover:bg-electric/20 sm:inline-block"
+              className="hidden rounded-full border border-electric/50 bg-electric/10 px-7 py-3 text-lg font-medium text-paper transition-colors hover:bg-electric/20 sm:inline-block"
             >
               Partner with us
             </a>
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
-              className="flex h-10 w-10 items-center justify-center rounded-md border border-hairline md:hidden"
+              className="flex h-11 w-11 items-center justify-center rounded-md border border-hairline md:hidden"
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
             >
@@ -93,7 +93,7 @@ export default function Navbar() {
               key={item.href}
               href={item.href}
               onClick={() => setOpen(false)}
-              className="mono py-3 text-sm uppercase tracking-[0.14em] text-paper-dim"
+              className="mono py-3.5 text-lg uppercase tracking-[0.14em] text-paper-dim"
             >
               {item.label}
             </a>
@@ -101,7 +101,7 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={() => setOpen(false)}
-            className="mt-2 rounded-full border border-electric/50 bg-electric/10 px-5 py-3 text-center text-sm font-medium text-paper"
+            className="mt-2 rounded-full border border-electric/50 bg-electric/10 px-5 py-3.5 text-center text-lg font-medium text-paper"
           >
             Partner with us
           </a>

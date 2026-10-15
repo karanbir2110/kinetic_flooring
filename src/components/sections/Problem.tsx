@@ -7,16 +7,26 @@ export default function Problem() {
   return (
     // width="wide" gives this section more side space. Options: "default" | "wide" | "full"
     <Section id="problem" hairline={false} width="wide">
-      {/* align="center" centers the eyebrow + heading */}
-      <SectionHeading eyebrow={problem.eyebrow} title={problem.title} align="center" />
+      {/* align="center" centers the eyebrow + heading; titleClassName sets the heading's line spacing */}
+      <SectionHeading
+        eyebrow={problem.eyebrow}
+        title={problem.title}
+        align="center"
+        titleClassName="!leading-[1.5]"
+      />
 
-      <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {/*
+        On large screens each card is a "subgrid" that shares 4 rows with its neighbours
+        (marker / title / tagline / body). That keeps every tagline on the same line and
+        every paragraph on the same line, even when a title wraps to 2-3 lines.
+        Below lg the cards simply stack as normal.
+      */}
+      <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-y-0">
         {problem.cards.map((card, i) => (
           <Reveal
             key={card.id}
             delay={i * 90}
-            // items-center + text-center = everything inside each box is centered
-            className="group flex flex-col items-center gap-5 rounded-2xl border border-hairline bg-ink-900 p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:border-electric/40 hover:bg-ink-800 hover:shadow-glow"
+            className="group flex flex-col items-center gap-5 rounded-2xl border border-hairline bg-ink-900 p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:border-electric/40 hover:bg-ink-800 hover:shadow-glow lg:row-span-4 lg:grid lg:items-start lg:justify-items-center lg:gap-y-5 lg:[grid-template-rows:subgrid]"
           >
             <HexMarker>{card.id}</HexMarker>
 
@@ -28,7 +38,7 @@ export default function Problem() {
               {card.tagline}
             </p>
 
-            <p className="text-base leading-relaxed text-paper-dim">{card.body}</p>
+            <p className="text-lg leading-relaxed text-paper-dim">{card.body}</p>
           </Reveal>
         ))}
       </div>

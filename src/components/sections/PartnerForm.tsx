@@ -13,7 +13,7 @@ export default function PartnerForm() {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    fetch("/api/questions")
+    fetch("/api/questions", { cache: "no-store" })
       .then((res) => res.json())
       .then((data) => setQuestions(data.questions ?? []))
       .finally(() => setLoading(false));
@@ -64,7 +64,7 @@ export default function PartnerForm() {
     return (
       <div className="mx-auto mt-10 max-w-xl rounded-2xl border border-hairline bg-paper/[0.05] px-8 py-10 text-center">
         <p className="font-display text-xl font-semibold">Thanks — we&apos;ve got it.</p>
-        <p className="mt-2 text-sm text-paper-dim">
+        <p className="mt-2 text-base text-paper-dim">
           Someone from the team will get back to you shortly.
         </p>
       </div>
@@ -73,21 +73,21 @@ export default function PartnerForm() {
 
   return (
     <form onSubmit={handleSubmit} className="mx-auto mt-10 max-w-xl text-left">
-      {loading && <p className="text-center text-sm text-muted">Loading form…</p>}
+      {loading && <p className="text-center text-base text-muted">Loading form…</p>}
 
-      <div className="space-y-5">
+      <div className="space-y-6">
         {questions.filter((q) => isVisible(q, questions, values)).map((q) => (
           <div key={q.id}>
             {q.type !== "checkbox" && (
               <label
                 htmlFor={q.id}
                 id={`${q.id}-label`}
-                className="mb-2 block text-sm font-medium text-paper-dim"
+                className="mb-2.5 block text-lg font-medium text-paper sm:text-xl"
               >
                 {q.label}
                 {q.required && <span className="text-electric-bright"> *</span>}
                 {q.type === "multiselect" && q.maxSelect ? (
-                  <span className="ml-2 text-xs font-normal text-muted">(pick up to {q.maxSelect})</span>
+                  <span className="ml-2 text-sm font-normal text-muted">(pick up to {q.maxSelect})</span>
                 ) : null}
               </label>
             )}
@@ -126,13 +126,13 @@ export default function PartnerForm() {
                 })}
               </div>
             ) : q.type === "checkbox" ? (
-              <label className="flex cursor-pointer items-center gap-3 text-sm text-paper-dim">
+              <label className="flex cursor-pointer items-center gap-3 text-lg text-paper sm:text-xl">
                 <input
                   id={q.id}
                   type="checkbox"
                   checked={values[q.id] === "Yes"}
                   onChange={(e) => setValue(q.id, e.target.checked ? "Yes" : "")}
-                  className="h-4 w-4 rounded accent-electric"
+                  className="h-5 w-5 rounded accent-electric"
                 />
                 {q.label}
               </label>
@@ -144,7 +144,7 @@ export default function PartnerForm() {
                 value={values[q.id] ?? ""}
                 onChange={(e) => setValue(q.id, e.target.value)}
                 rows={4}
-                className="w-full rounded-xl border border-hairline bg-paper/[0.05] px-4 py-3 text-sm text-paper outline-none transition-colors focus:border-electric/60"
+                className="w-full rounded-xl border border-hairline bg-paper/[0.05] px-4 py-3.5 text-base text-paper outline-none sm:text-lg transition-colors focus:border-electric/60"
               />
             ) : q.type === "select" ? (
               <select
@@ -152,7 +152,7 @@ export default function PartnerForm() {
                 required={q.required}
                 value={values[q.id] ?? ""}
                 onChange={(e) => setValue(q.id, e.target.value)}
-                className="w-full rounded-xl border border-hairline bg-paper/[0.05] px-4 py-3 text-sm text-paper outline-none transition-colors focus:border-electric/60"
+                className="w-full rounded-xl border border-hairline bg-paper/[0.05] px-4 py-3.5 text-base text-paper outline-none sm:text-lg transition-colors focus:border-electric/60"
               >
                 <option value="" disabled>
                   Select an option
@@ -171,20 +171,20 @@ export default function PartnerForm() {
                 placeholder={q.placeholder}
                 value={values[q.id] ?? ""}
                 onChange={(e) => setValue(q.id, e.target.value)}
-                className="w-full rounded-xl border border-hairline bg-paper/[0.05] px-4 py-3 text-sm text-paper outline-none transition-colors focus:border-electric/60"
+                className="w-full rounded-xl border border-hairline bg-paper/[0.05] px-4 py-3.5 text-base text-paper outline-none sm:text-lg transition-colors focus:border-electric/60"
               />
             )}
           </div>
         ))}
       </div>
 
-      {error && <p className="mt-4 text-sm text-red-400">{error}</p>}
+      {error && <p className="mt-4 text-base text-red-400">{error}</p>}
 
       {!loading && (
         <button
           type="submit"
           disabled={submitting}
-          className="group mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-electric px-8 py-4 text-sm font-semibold text-onaccent shadow-glow transition-transform hover:-translate-y-0.5 disabled:opacity-60 sm:w-auto"
+          className="group mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-electric px-8 py-4 text-base font-semibold text-onaccent shadow-glow transition-transform hover:-translate-y-0.5 disabled:opacity-60 sm:w-auto"
         >
           {submitting ? "Sending…" : "Send"}
           <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
@@ -219,14 +219,14 @@ function Chip({
       aria-checked={selected}
       disabled={disabled}
       onClick={onClick}
-      className={`w-full rounded-xl border px-4 py-3 text-left text-sm transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${
+      className={`w-full rounded-xl border px-4 py-3.5 text-left text-base transition-colors sm:text-lg disabled:cursor-not-allowed disabled:opacity-40 ${
         selected
           ? "border-electric bg-electric/15 text-paper"
           : "border-hairline bg-paper/[0.05] text-paper-dim hover:border-electric/40"
       }`}
     >
       <span className="font-medium">{title}</span>
-      {desc && <span className="mt-0.5 block text-xs text-muted">{desc}</span>}
+      {desc && <span className="mt-0.5 block text-sm text-muted sm:text-base">{desc}</span>}
     </button>
   );
 }
