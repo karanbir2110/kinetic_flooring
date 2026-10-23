@@ -43,7 +43,7 @@ export default function Roadmap() {
         {/* connecting line: runs from the centre of the 1st marker to the centre of the 3rd
             (top-[24px] = vertical centre of the h-12 markers; gap-12 = 3rem, so a column centre is 16.666% - 1rem) */}
         <span
-          className="absolute left-[calc(16.666%-1rem)] right-[calc(16.666%-1rem)] top-[24px] hidden h-px bg-gradient-to-r from-electric via-electric/40 to-energy lg:block"
+          className="absolute left-[calc(16.666%-1rem)] right-[calc(16.666%-1rem)] top-[1.5rem] hidden h-px bg-gradient-to-r from-electric via-electric/40 to-energy lg:block"
           aria-hidden
         />
         <ol className="grid gap-12 md:grid-cols-3">

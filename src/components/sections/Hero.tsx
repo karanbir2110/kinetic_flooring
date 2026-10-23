@@ -3,11 +3,11 @@ import { hero } from "@/lib/content";
 
 export default function Hero() {
   return (
-    <section id="top" className="relative flex min-h-[92vh] items-center overflow-hidden">
+    <section id="top" className="relative flex min-h-[calc(var(--screen-h,100vh)*0.92)] items-center overflow-hidden">
       {/* Photographic backdrop */}
       <div className="absolute inset-0">
         <Image
-          src="/assets/hero-floor.jpgg"
+          src="/assets/hero-floor.jpg"
           alt="Commuters walking across an illuminated hexagonal kinetic floor in a high-traffic concourse"
           fill
           priority

@@ -4,6 +4,9 @@ const config: Config = {
   content: ["./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
+      minHeight: {
+        screen: "var(--screen-h, 100vh)",
+      },
       colors: {
         // All colors are driven by CSS variables (see src/app/globals.css)
         // so the three color schemes can be swapped at runtime.
@@ -42,7 +45,7 @@ const config: Config = {
         eyebrow: "0.22em",
       },
       maxWidth: {
-        shell: "1240px",
+        shell: "77.5rem", // 1240px @ 16px root, scales with the fluid root font-size
       },
       boxShadow: {
         glow: "0 0 0 1px rgb(var(--c-electric) / 0.35), 0 0 40px -8px rgb(var(--c-electric) / 0.45)",

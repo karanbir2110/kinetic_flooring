@@ -45,12 +45,12 @@ export default function Navbar() {
         >
           <Logo />
 
-          <nav className="hidden items-center gap-6 md:flex lg:gap-9" aria-label="Primary">
+          <nav className="hidden items-center gap-6 lg:flex xl:gap-9" aria-label="Primary">
             {nav.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="mono text-[0.9375rem] uppercase tracking-[0.12em] text-paper-dim transition-colors hover:text-paper lg:text-[1.0625rem]"
+                className="mono text-[0.9375rem] uppercase tracking-[0.12em] text-paper-dim transition-colors hover:text-paper xl:text-[1.0625rem]"
               >
                 {item.label}
               </a>
@@ -67,7 +67,7 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
-              className="flex h-11 w-11 items-center justify-center rounded-md border border-hairline md:hidden"
+              className="flex h-11 w-11 items-center justify-center rounded-md border border-hairline lg:hidden"
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
             >
@@ -83,7 +83,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div
-        className={`overflow-hidden border-t border-hairline bg-ink/95 backdrop-blur-md transition-[max-height] duration-300 md:hidden ${
+        className={`overflow-hidden border-t border-hairline bg-ink/95 backdrop-blur-md transition-[max-height] duration-300 lg:hidden ${
           open ? "max-h-96" : "max-h-0"
         }`}
       >

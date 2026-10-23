@@ -5,7 +5,7 @@ export default function Landing() {
   return (
     <main
       id="landing-top"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-ink"
+      className="relative flex min-h-[var(--screen-h,100vh)] items-center justify-center overflow-hidden bg-ink"
     >
       <div className="absolute inset-0 grid-texture opacity-30" />
       <div className="absolute inset-0 bg-gradient-to-b from-electric/10 via-ink to-ink" />

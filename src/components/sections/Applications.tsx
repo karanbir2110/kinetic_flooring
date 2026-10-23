@@ -19,7 +19,7 @@ export default function Applications() {
           <Reveal
             key={card.name}
             delay={(i % 4) * 70}
-            className="group relative flex min-h-[250px] flex-col justify-between gap-8 bg-ink-900 p-9 transition-colors hover:bg-ink-800"
+            className="group relative flex min-h-[15.5rem] flex-col justify-between gap-8 bg-ink-900 p-9 transition-colors hover:bg-ink-800"
           >
             <svg viewBox="0 0 40 40" className="h-11 w-11" aria-hidden>
               <polygon
