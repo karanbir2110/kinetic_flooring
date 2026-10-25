@@ -203,6 +203,36 @@ body {
   opacity: 1;
 }
 
+/* Landing page only: blinking tiles (.tile-lit above stays static for other sections) */
+.tile-blink {
+  opacity: 0.05;
+  animation: tileBlink 3.4s ease-in-out infinite;
+}
+@keyframes tileBlink {
+  0%,
+  100% {
+    opacity: 0.04;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* Same blink, gentler - used for tiles that sit behind the headline text */
+.tile-blink-soft {
+  opacity: 0.03;
+  animation: tileBlinkSoft 3.4s ease-in-out infinite;
+}
+@keyframes tileBlinkSoft {
+  0%,
+  100% {
+    opacity: 0.02;
+  }
+  50% {
+    opacity: 0.16;
+  }
+}
+
 /* ---- Focus visibility ---- */
 :focus-visible {
   outline: 2px solid rgb(var(--c-electric-bright));

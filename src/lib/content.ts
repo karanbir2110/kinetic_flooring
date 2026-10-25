@@ -1,5 +1,5 @@
 /**
- * Central content model for the Spandan kinetic-flooring site.
+ * Central content model for the KARM kinetic-flooring site.
  * All technical figures are drawn from the project's design / prototype
  * documentation and are labelled as design or prototype values where relevant.
  */
@@ -31,7 +31,7 @@ export const nav = [
 /* ---- Section 1: Hero ---- */
 export const hero = {
   eyebrow: "Karm Energy Returns",
-  title: ["STEP.POWER.","ENGAGE.IMPACT."],
+  title: ["STEP.POWER.", "ENGAGE.IMPACT."],
   sub: "KARM turns everyday footsteps into power, and power into attention. Our kinetic tiles turn foot traffic into electricity and power a built-in LED display, so your message is carried by the very people it reaches. KARM turns campaigns, events, CSR commitments and games into experiences people step into, not just walk past it.",
   flow: ["Step", "Harvest", "Convert", "Store"],
   ctaPrimary: { label: "See what KARM offers", href: "#problem" },
@@ -135,7 +135,7 @@ export const howItWorks = {
 export const engineering = {
   eyebrow: "System architecture",
   title: "Engineered as a system. Not just a tile.",
-  lead: "Spandan is a full mechanical-to-electrical energy chain — closer to a distributed generator network than to simple piezoelectric floor pads.",
+  lead: "KARM is a full mechanical-to-electrical energy chain — closer to a distributed generator network than to simple piezoelectric floor pads.",
   domains: [
     {
       key: "Mechanical",
@@ -280,7 +280,7 @@ export const applications = {
 export const businessValue = {
   eyebrow: "The business case",
   title: "Why would a building install it?",
-  lead: "The value extends well beyond watts. Spandan adds an energy, sensing and engagement layer to floors that were previously inert.",
+  lead: "The value extends well beyond watts. KARM adds an energy, sensing and engagement layer to floors that were previously inert.",
   cards: [
     {
       key: "Energy harvesting",
@@ -387,7 +387,7 @@ export const finalCta = {
   body: "We're looking to collaborate with infrastructure operators, smart-building companies, sustainability teams and technology partners to pilot kinetic flooring in real-world environments.",
   ctaPrimary: {
     label: "Discuss a pilot",
-    href: "mailto:partners@Spandan-kinetic.example?subject=Kinetic%20flooring%20pilot",
+    href: "mailto:partners@KARM-kinetic.example?subject=Kinetic%20flooring%20pilot",
   },
   ctaSecondary: {
     label: "Contact the team",

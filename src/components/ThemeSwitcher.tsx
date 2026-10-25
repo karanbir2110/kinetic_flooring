@@ -4,14 +4,30 @@ import { useCallback, useEffect, useState } from "react";
 
 export type ThemeId = "1" | "2" | "3";
 
-const STORAGE_KEY = "spandan-theme";
+const STORAGE_KEY = "KARM-theme";
 const DEFAULT_THEME: ThemeId = "1";
 
 /** Swatches shown inside each button (purely visual). */
-const THEMES: { id: ThemeId; name: string; colors: [string, string, string] }[] = [
-  { id: "1", name: "Merino · Rock Blue · Venice Blue", colors: ["#F5EEDD", "#84B3CE", "#16587B"] },
-  { id: "2", name: "Old Rose · Sea Shell · Sky Blue", colors: ["#E19AA6", "#FAF0EA", "#82B0CE"] },
-  { id: "3", name: "Cream on Burgundy", colors: ["#FFECD1", "#3E000C", "#BC998C"] },
+const THEMES: {
+  id: ThemeId;
+  name: string;
+  colors: [string, string, string];
+}[] = [
+  {
+    id: "1",
+    name: "Merino · Rock Blue · Venice Blue",
+    colors: ["#F5EEDD", "#84B3CE", "#16587B"],
+  },
+  {
+    id: "2",
+    name: "Old Rose · Sea Shell · Sky Blue",
+    colors: ["#E19AA6", "#FAF0EA", "#82B0CE"],
+  },
+  {
+    id: "3",
+    name: "Cream on Burgundy",
+    colors: ["#FFECD1", "#3E000C", "#BC998C"],
+  },
 ];
 
 const META_COLORS: Record<ThemeId, string> = {
@@ -62,7 +78,14 @@ export default function ThemeSwitcher() {
     const onKey = (e: KeyboardEvent) => {
       if (e.metaKey || e.ctrlKey || e.altKey) return;
       const t = e.target as HTMLElement | null;
-      if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.tagName === "SELECT" || t.isContentEditable)) return;
+      if (
+        t &&
+        (t.tagName === "INPUT" ||
+          t.tagName === "TEXTAREA" ||
+          t.tagName === "SELECT" ||
+          t.isContentEditable)
+      )
+        return;
       if (isTheme(e.key)) choose(e.key);
     };
     window.addEventListener("keydown", onKey);

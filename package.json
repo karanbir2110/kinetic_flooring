@@ -1,8 +1,8 @@
 {
-  "name": "Spandan-kinetic-flooring",
+  "name": "KARM-kinetic-flooring",
   "version": "1.0.0",
   "private": true,
-  "description": "Spandan — modular kinetic flooring platform. Marketing / pitch site.",
+  "description": "KARM — modular kinetic flooring platform. Marketing / pitch site.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

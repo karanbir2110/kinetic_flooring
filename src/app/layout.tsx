@@ -2,16 +2,15 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 
-const SITE_TITLE =
-  "Spandan — Kinetic Flooring That Turns Footsteps Into Energy";
+const SITE_TITLE = "KARM — Kinetic Flooring That Turns Footsteps Into Energy";
 const SITE_DESC =
-  "Spandan is a modular kinetic flooring platform that converts everyday foot traffic into usable electrical energy — and turns the floor into a distributed sensing and energy-monitoring layer for high-traffic spaces.";
+  "KARM is a modular kinetic flooring platform that converts everyday foot traffic into usable electrical energy — and turns the floor into a distributed sensing and energy-monitoring layer for high-traffic spaces.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://Spandan-kinetic.example"),
+  metadataBase: new URL("https://KARM-kinetic.example"),
   title: SITE_TITLE,
   description: SITE_DESC,
-  applicationName: "Spandan Kinetic Flooring",
+  applicationName: "KARM Kinetic Flooring",
   keywords: [
     "kinetic flooring",
     "energy harvesting floor",
@@ -22,12 +21,12 @@ export const metadata: Metadata = {
     "smart building infrastructure",
     "distributed sensing floor",
   ],
-  authors: [{ name: "Spandan Kinetic Energy Systems" }],
+  authors: [{ name: "KARM Kinetic Energy Systems" }],
   openGraph: {
     title: SITE_TITLE,
     description: SITE_DESC,
     type: "website",
-    siteName: "Spandan",
+    siteName: "KARM",
     images: [
       {
         url: "/assets/hero-floor.jpg",
@@ -62,7 +61,7 @@ export default function RootLayout({
         {/* Apply the saved color scheme before first paint (prevents a flash). */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{var t=localStorage.getItem("spandan-theme");if(t==="1"||t==="2"||t==="3"){document.documentElement.setAttribute("data-theme",t);var m={"1":"#F5EEDD","2":"#FAF0EA","3":"#3E000C"};var x=document.querySelector('meta[name="theme-color"]');if(x)x.setAttribute("content",m[t])}}catch(e){}`,
+            __html: `try{var t=localStorage.getItem("KARM-theme");if(t==="1"||t==="2"||t==="3"){document.documentElement.setAttribute("data-theme",t);var m={"1":"#F5EEDD","2":"#FAF0EA","3":"#3E000C"};var x=document.querySelector('meta[name="theme-color"]');if(x)x.setAttribute("content",m[t])}}catch(e){}`,
           }}
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
