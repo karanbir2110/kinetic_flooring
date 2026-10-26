@@ -24,9 +24,9 @@ export function Section({
         : "shell";
 
   return (
-    <section id={id} className={`relative py-24 sm:py-28 lg:py-36 ${className}`}>
+    <section id={id} className={`relative py-16 sm:py-28 lg:py-36 ${className}`}>
       <div className={shellClass}>
-        {hairline && <div className="hairline-t mb-16" aria-hidden />}
+        {hairline && <div className="hairline-t mb-10 sm:mb-16" aria-hidden />}
         {children}
       </div>
     </section>
@@ -47,12 +47,12 @@ export function Eyebrow({
   className?: string;
 }) {
   return (
-    <div className={`flex items-center gap-4 ${className}`}>
-      <span className="inline-block h-px w-12 shrink-0 bg-electric" aria-hidden />
-      <span className="eyebrow !text-[length:clamp(1.1rem,1.8vw,1.4rem)] text-paper-dim">
+    <div className={`flex items-center justify-center gap-3 sm:gap-4 ${className}`}>
+      <span className="inline-block h-px w-6 shrink-0 bg-electric sm:w-12" aria-hidden />
+      <span className="eyebrow text-balance text-center !text-[length:clamp(0.85rem,1.8vw,1.4rem)] text-paper-dim">
         {children}
       </span>
-      <span className="inline-block h-px w-12 shrink-0 bg-electric" aria-hidden />
+      <span className="inline-block h-px w-6 shrink-0 bg-electric sm:w-12" aria-hidden />
     </div>
   );
 }
@@ -80,12 +80,12 @@ export function SectionHeading({
       <div className={align === "center" ? "flex justify-center" : ""}>
         <Eyebrow>{eyebrow}</Eyebrow>
       </div>
-      <h2 className={`font-display mt-8 max-w-5xl text-balance text-4xl font-bold leading-[1.05] tracking-tightest sm:text-5xl lg:text-[3.5rem] ${titleClassName}`}>
+      <h2 className={`font-display mt-6 max-w-5xl text-balance text-[2rem] font-bold sm:mt-8 sm:text-5xl leading-[1.05] tracking-tightest lg:text-[3.5rem] ${titleClassName}`}>
         {title}
       </h2>
       {lead && (
         <p
-          className={`mt-6 max-w-3xl text-lg leading-relaxed text-paper-dim sm:text-xl ${
+          className={`mt-5 max-w-3xl text-base leading-relaxed text-paper-dim sm:mt-6 sm:text-xl ${
             align === "center" ? "mx-auto" : ""
           }`}
         >

@@ -4,7 +4,7 @@ import PartnerForm from "./PartnerForm";
 
 export default function FinalCTA() {
   return (
-    <section id="contact" className="relative overflow-hidden py-28 sm:py-36 lg:py-44">
+    <section id="contact" className="relative overflow-hidden py-16 sm:py-36 lg:py-44">
       {/* ambient glow backdrop (hexagons removed) */}
       <svg className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.35]" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" aria-hidden>
         <defs>
@@ -18,11 +18,11 @@ export default function FinalCTA() {
 
       <div className="shell relative z-10">
         <Reveal className="mx-auto max-w-5xl text-center">
-          <h2 className="font-display text-balance text-5xl font-bold leading-[1.25] tracking-tightest sm:text-6xl lg:text-[5rem]">
+          <h2 className="font-display text-balance text-[2.25rem] font-bold leading-[1.2] tracking-tightest sm:text-6xl sm:leading-[1.25] lg:text-[5rem]">
             <span className="block">{finalCta.title[0]}</span>
             <span className="block text-electric-bright">{finalCta.title[1]}</span>
           </h2>
-          <p className="mx-auto mt-9 max-w-3xl text-xl leading-relaxed text-paper-dim sm:text-2xl">
+          <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-paper-dim sm:mt-9 sm:text-2xl">
             {finalCta.body}
           </p>
           <PartnerForm />

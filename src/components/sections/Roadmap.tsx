@@ -36,17 +36,17 @@ export default function Roadmap() {
         title={partner.title}
         align="center"
         // line spacing for the heading – raise/lower the number to taste
-        titleClassName="!leading-[1.5]"
+        titleClassName="!leading-[1.25] sm:!leading-[1.5]"
       />
 
-      <div className="relative mt-20">
+      <div className="relative mt-12 sm:mt-20">
         {/* connecting line: runs from the centre of the 1st marker to the centre of the 3rd
             (top-[24px] = vertical centre of the h-12 markers; gap-12 = 3rem, so a column centre is 16.666% - 1rem) */}
         <span
           className="absolute left-[calc(16.666%-1rem)] right-[calc(16.666%-1rem)] top-[1.5rem] hidden h-px bg-gradient-to-r from-electric via-electric/40 to-energy lg:block"
           aria-hidden
         />
-        <ol className="grid gap-12 md:grid-cols-3">
+        <ol className="grid gap-10 sm:gap-12 md:grid-cols-3">
           {partner.steps.map((step, i) => (
             <Reveal as="li" key={step.id} delay={i * 100} className="relative">
               {/* marker sits centred above the title; everything in the column is centred */}
@@ -54,11 +54,11 @@ export default function Roadmap() {
                 <span className="relative z-10 flex h-12 w-12 flex-none items-center justify-center rounded-full border border-electric/50 bg-ink text-electric-bright">
                   <span className="mono text-sm">{step.id}</span>
                 </span>
-                <h3 className="font-display mt-6 text-2xl font-semibold tracking-tight sm:text-3xl lg:mt-8">
+                <h3 className="font-display mt-5 text-[1.375rem] font-semibold tracking-tight sm:mt-6 sm:text-3xl lg:mt-8">
                   {step.title}
                 </h3>
               </div>
-              <p className="mx-auto mt-4 max-w-md text-center text-lg leading-relaxed text-paper-dim sm:text-xl">
+              <p className="mx-auto mt-3 max-w-md text-center text-base leading-relaxed text-paper-dim sm:mt-4 sm:text-xl">
                 {step.body}
               </p>
             </Reveal>

@@ -83,17 +83,17 @@ export default function Highlights() {
       className="relative py-10 sm:py-12 lg:py-14"
     >
       <div className="shell">
-        <div className="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-10 sm:gap-y-12 lg:grid-cols-4">
           {highlights.map((item, i) => (
             <Reveal
               key={item.title}
               delay={i * 90}
-              className="flex min-w-0 flex-col items-center gap-4 px-2 py-2 text-center"
+              className="flex min-w-0 flex-col items-center gap-3 px-1 py-2 text-center sm:gap-4 sm:px-2"
             >
               {/* circular badge */}
               <span
                 aria-hidden
-                className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-electric/60 bg-electric/10 text-electric-bright shadow-glow/40"
+                className="flex h-14 w-14 shrink-0 sm:h-16 sm:w-16 items-center justify-center rounded-full border border-electric/60 bg-electric/10 text-electric-bright shadow-glow/40"
               >
                 {item.badge}
               </span>

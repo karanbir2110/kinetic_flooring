@@ -98,7 +98,7 @@ export default function ThemeSwitcher() {
     <div
       role="group"
       aria-label="Color scheme"
-      className="fixed bottom-4 right-4 z-[70] flex items-center gap-1.5 p-1.5 opacity-0 sm:bottom-6 sm:right-6"
+      className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] right-4 z-[70] flex items-center gap-1.5 p-1.5 opacity-0 sm:bottom-6 sm:right-6"
     >
       {THEMES.map((t) => (
         <button

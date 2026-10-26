@@ -62,7 +62,7 @@ export default function PartnerForm() {
 
   if (submitted) {
     return (
-      <div className="mx-auto mt-10 max-w-xl rounded-2xl border border-hairline bg-paper/[0.05] px-8 py-10 text-center">
+      <div className="mx-auto mt-8 max-w-xl rounded-2xl border border-hairline bg-paper/[0.05] px-5 py-8 text-center sm:mt-10 sm:px-8 sm:py-10">
         <p className="font-display text-xl font-semibold">Thanks — we&apos;ve got it.</p>
         <p className="mt-2 text-base text-paper-dim">
           Someone from the team will get back to you shortly.
@@ -72,17 +72,17 @@ export default function PartnerForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mx-auto mt-10 max-w-xl text-left">
+    <form onSubmit={handleSubmit} className="mx-auto mt-8 max-w-xl text-left sm:mt-10">
       {loading && <p className="text-center text-base text-muted">Loading form…</p>}
 
-      <div className="space-y-6">
+      <div className="space-y-5 sm:space-y-6">
         {questions.filter((q) => isVisible(q, questions, values)).map((q) => (
           <div key={q.id}>
             {q.type !== "checkbox" && (
               <label
                 htmlFor={q.id}
                 id={`${q.id}-label`}
-                className="mb-2.5 block text-lg font-medium text-paper sm:text-xl"
+                className="mb-2 block text-base font-medium text-paper sm:mb-2.5 sm:text-xl"
               >
                 {q.label}
                 {q.required && <span className="text-electric-bright"> *</span>}
@@ -132,7 +132,7 @@ export default function PartnerForm() {
                   type="checkbox"
                   checked={values[q.id] === "Yes"}
                   onChange={(e) => setValue(q.id, e.target.checked ? "Yes" : "")}
-                  className="h-5 w-5 rounded accent-electric"
+                  className="h-6 w-6 flex-none rounded accent-electric"
                 />
                 {q.label}
               </label>
@@ -184,7 +184,7 @@ export default function PartnerForm() {
         <button
           type="submit"
           disabled={submitting}
-          className="group mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-electric px-8 py-4 text-base font-semibold text-onaccent shadow-glow transition-transform hover:-translate-y-0.5 disabled:opacity-60 sm:w-auto"
+          className="group mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-electric px-8 py-4 text-base font-semibold text-onaccent shadow-glow transition-transform hover:-translate-y-0.5 disabled:opacity-60 sm:w-auto"
         >
           {submitting ? "Sending…" : "Send"}
           <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>

@@ -48,6 +48,7 @@ export const viewport: Viewport = {
   themeColor: "#F5EEDD",
   width: "device-width",
   initialScale: 1,
+  viewportFit: "cover", // lets the page use the full screen on notched phones
 };
 
 export default function RootLayout({
