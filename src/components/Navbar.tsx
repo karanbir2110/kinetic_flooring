@@ -46,7 +46,7 @@ export default function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 pt-[env(safe-area-inset-top)] transition-all duration-300 ${
         scrolled || open
-          ? "border-b border-hairline bg-ink/90 backdrop-blur-md"
+          ? "border-b border-hairline bg-ink"
           : "border-b border-transparent bg-transparent"
       }`}
     >
@@ -96,7 +96,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div
-        className={`overflow-hidden border-t border-hairline bg-ink/95 backdrop-blur-md transition-[max-height] duration-300 lg:hidden ${
+        className={`overflow-hidden border-t border-hairline bg-ink transition-[max-height] duration-300 lg:hidden ${
           open ? "max-h-[80vh] overflow-y-auto" : "max-h-0"
         }`}
       >

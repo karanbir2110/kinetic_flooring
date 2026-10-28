@@ -28,7 +28,9 @@ export default function Team() {
       <div className="mx-auto mt-10 max-w-4xl text-center sm:mt-14">
         {team.paragraphs.map((text, i) => (
           <Reveal key={i} delay={i * 90}>
-            <p className="text-base leading-relaxed text-paper-dim sm:text-2xl">{text}</p>
+            <p className="mx-auto max-w-4xl text-balance text-center text-base leading-relaxed text-paper-dim sm:text-2xl">
+              {text}
+            </p>
           </Reveal>
         ))}
 

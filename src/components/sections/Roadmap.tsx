@@ -18,7 +18,7 @@ const partner = {
     {
       id: "02",
       title: "Subscription",
-      body: "Maintain a continuous branded presence with a recurring subscription. We handle maintenance, campaign updates, and refreshes to keep your installation relevant. Ideal for brands and advertisers.",
+      body: "Maintain a continuous branded presence with a recurring subscription. Display your ads, campaigns or hold engagement activities via our LED screen, completely powered by footsteps. Ideal for brands and advertisers.",
     },
     {
       id: "03",
